@@ -7,14 +7,14 @@ const StyledButton = style.button`
   width: auto;
   font-size: 1em;
   cursor: pointer;
-  background: ${p => p.theme.primary};
+  background: ${p => p.theme.text};
   font-family: ${p => p.theme.font};
-  color: ${p => p.theme.text};
+  color: ${p => p.theme.primary};
   padding: 0.75em 1.5em;
   border-radius: 10px;
   transition: all 350ms;
   :hover {
-    background: ${p => p.theme.primaryHover};
+    background: ${p => p.theme.lightHover};
   }
 `
 

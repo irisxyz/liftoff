@@ -38,7 +38,7 @@ const Cta = styled(Button)`
 `
 
 const QuestionButton = styled(Button)`
-  width: 500px;
+  width: 600px;
   display: block;
   text-align: left;
   margin-bottom: 0.5em;
@@ -68,11 +68,29 @@ AnimationContent.propTypes = {
 const Question = ({ question, index, option1, option2, option3, next }) => {
   return <>
     <span>Question {index}/8</span>
-    <h2>{question}</h2>
+    <m.h2
+      initial={{ x: -100, opacity: 0 }}
+      animate={{ x: 0, opacity: 1 }}
+      transition={{ duration: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
+    >
+      {question}
+    </m.h2>
     <Buttons>
-      <QuestionButton onClick={() => next()}>{option1}</QuestionButton>
-      <QuestionButton onClick={() => next()}>{option2}</QuestionButton>
-      <QuestionButton onClick={() => next()}>{option3}</QuestionButton>
+      <QuestionButton
+        onClick={() => next()}
+      >
+        {option1}
+      </QuestionButton>
+      <QuestionButton
+        onClick={() => next()}
+      >
+        {option2}
+      </QuestionButton>
+      <QuestionButton
+        onClick={() => next()}
+      >
+        {option3}
+      </QuestionButton>
     </Buttons>
   </>
 }

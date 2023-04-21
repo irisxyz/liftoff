@@ -16,6 +16,7 @@ const theme = {
   color: PRIMITIVES,
   primary: PRIMITIVES.primary,
   primaryHover: PRIMITIVES.primaryHover,
+  lightHover: '#D1D0FF',
   secondary: PRIMITIVES.secondary,
   text: PRIMITIVES.primary01,
   textSecondary: PRIMITIVES.primary04,
