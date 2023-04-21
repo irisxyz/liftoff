@@ -45,7 +45,7 @@ const QuestionButton = styled(Button)`
   font-size: 20px;
 `
 
-const AnimationContent = ({ children, key }) => {
+const AnimationContent = ({ children, key, delay }) => {
   return (
     <m.div
       style={{ height: '100%', textAlign: 'left' }}
@@ -53,7 +53,7 @@ const AnimationContent = ({ children, key }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3 }}
+      transition={{ duration: 0.3, delay: delay ? 0.3 : 0 }}
     >
       {children}
     </m.div>
@@ -62,6 +62,7 @@ const AnimationContent = ({ children, key }) => {
 AnimationContent.propTypes = {
   children: PropTypes.node,
   key: PropTypes.string,
+  delay: PropTypes.bool,
 }
 
 const Question = ({ question, index, option1, option2, option3, next }) => {
@@ -98,14 +99,40 @@ function App() {
   const pageDisplay = () => {
     switch(page) {
       case 0:
-        return <AnimationContent key="0">
+        return <AnimationContent key="0" delay>
           <VertCenter>
-            <h1>gm! it&apos;s time to liftoff.</h1>
+            <m.h1
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+              }}
+            >gm! it&apos;s time to liftoff.</m.h1>
             <br/>
             <br/>
-            <h1>8 questions.</h1>
-            <h1>3 minutes.</h1>
-            <h1 style={{ textAlign: 'center' }}>Start your web3 <br/>journey here.</h1>
+            <m.h2
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.15,
+              }}>8 questions.</m.h2>
+            <m.h2
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+                duration: 0.8,
+                delay: 0.3,
+              }}>3 minutes.</m.h2>
+            <m.h2 
+              initial={{ y: -50, opacity: 0 }}
+              animate={{ y: 0, opacity: 1 }}
+              transition={{
+              duration: 0.8,
+              delay: 0.45,
+              }}
+              style={{ textAlign: 'center' }}
+            >Start your web3 <br/>journey here.</m.h2>
             <br/>
             <br/>
             <br/>
