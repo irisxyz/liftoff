@@ -9,9 +9,10 @@ const StyledButton = style.button`
   cursor: pointer;
   background: ${p => p.theme.primary};
   font-family: ${p => p.theme.font};
-  padding: 0.5em 1em;
-  border-radius: 6px;
-  transition: all 200ms;
+  color: ${p => p.theme.text};
+  padding: 0.75em 1.5em;
+  border-radius: 10px;
+  transition: all 350ms;
   :hover {
     background: ${p => p.theme.primaryHover};
   }

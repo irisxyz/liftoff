@@ -18,6 +18,15 @@ body {
   margin: 0;
   color: white;
 }
+h1, h2 {
+  margin: 0;
+}
+h1 {
+  font-size: 48px;
+}
+h2 {
+  font-size: 36px;
+}
 a {
   color: ${p => p.theme.primary};
   text-decoration: none;

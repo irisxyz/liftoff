@@ -7,8 +7,8 @@ const PRIMITIVES = {
   primary04: '#71767B',
   surface01: '#1C1D1F',
   surface02: '#232427',
-  primary: '#646cff',
-  primaryHover: '#D8FF88',
+  primary: '#2E1D98',
+  primaryHover: '#4830DE',
   secondary: '#7857ED',
 }
 
