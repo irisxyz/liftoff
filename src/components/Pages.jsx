@@ -14,6 +14,12 @@ import q4_notebook from '../assets/q4_notebook.svg'
 import modal from '../assets/modal.svg'
 import modal2 from '../assets/modal2.svg'
 import content from '../assets/content.svg'
+import d_q4 from '../assets/d_q4.svg'
+import d_q5 from '../assets/d_q5.svg'
+import d_q6 from '../assets/d_q6.svg'
+import d_q7 from '../assets/d_q7.svg'
+import d_q8 from '../assets/d_q8.svg'
+import d_spaceship from '../assets/d_spaceship.svg'
 
 
 const VertCenter = styled.div`
@@ -44,6 +50,11 @@ const Images = styled(m.div)`
 const Image = styled(m.img)`
     max-height: 300px;
     max-width: 300px;
+    margin: 0 2em;
+`
+
+const Illustration = styled(m.img)`
+    max-height: 300px;
     margin: 0 2em;
 `
 
@@ -207,9 +218,7 @@ const Pages = ({ page, nextPage }) => {
                   option3="Mining valuable resources from asteroids"
                   next={() => nextPage()}
                 >
-                    <Image src={q1_rock} />
-                    <Image src={q1_notebook} />
-                    <Image src={q1_nametag} />
+                    <Illustration src={d_q4} />
                 </Question>
               </AnimationContent>
             case 4:
@@ -266,7 +275,9 @@ const Pages = ({ page, nextPage }) => {
                   option2="Iridescent mushrooms that cause the anomaly to illuminate fluorescent patterns in space"
                   option3="Truth serum, so you can figure out exactly what the anomaly wants"
                   next={() => nextPage()}
-                />
+                >
+                    <Illustration src={d_q5} />
+                  </Question>
               </AnimationContent>
             case 8:
               return <AnimationContent key="8">
@@ -277,7 +288,9 @@ const Pages = ({ page, nextPage }) => {
                   option2="Use AI to find patterns in the gibberish"
                   option3="Preserve the gibberish as an artifact so that museums can display it"
                   next={() => nextPage()}
-                />
+                >
+                    <Illustration src={d_q6} />
+                  </Question>
               </AnimationContent>
             case 9:
               return <AnimationContent key="9">
@@ -288,7 +301,9 @@ const Pages = ({ page, nextPage }) => {
                   option2="Connect with mission control and fellow astronauts for support and guidance"
                   option3="Have the crew vote on whether to let the anomaly take you to its destination"
                   next={() => nextPage()}
-                />
+                >
+                    <Illustration src={d_q7} />
+                  </Question>
               </AnimationContent>
             case 10:
               return <AnimationContent key="10">
@@ -299,7 +314,9 @@ const Pages = ({ page, nextPage }) => {
                   option2="Go back to space with a team of experts to investigate what intelligence and technology can be gathered from the anomaly"
                   option3="Find and invest in companies that specialize in anomalies as anomalies are the future"
                   next={() => nextPage()}
-                />
+                >
+                    <Illustration src={d_q8} />
+                  </Question>
               </AnimationContent>
             case 11:
                 return <AnimationContent key="11">
