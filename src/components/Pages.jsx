@@ -200,7 +200,8 @@ const Pages = ({ page, nextPage }) => {
                   next={() => nextPage()}
                 >
                     <Image src={q1_rock} />
-                    <Image src={q1_rock} />
+                    <Image src={q1_notebook} />
+                    <Image src={q1_nametag} />
                 </Question>
               </AnimationContent>
             case 4:
