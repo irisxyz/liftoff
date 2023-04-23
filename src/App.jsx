@@ -75,20 +75,26 @@ function App() {
     if (page === 3) {
       setBg('#160F66')
     }
+    if (page > 10) {
+      setBg('#090B5C')
+    }
+    if (page > 11) {
+      setBg('#39375D')
+    }
   }, [page, setBg])
 
   return (
     <>
       <Center bg={bg}>
         <AnimatePresence mode="wait">
-          {page > 2 && <Background
+          {page > 2 && page < 12 && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 6 }}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           />}
-          {page >= 3 && <Foreground
+          {page > 2 && page < 12 && <Foreground
             key="foreground"
             src={bottom}
             initial={{ opacity: 0, y: 600 }}
@@ -102,7 +108,7 @@ function App() {
         </Centered>
       </Center>
       <div style={{position: 'absolute', top: '1em', left: '1em' }}>
-      <Button onClick={() => prevPage()}>&larr;</Button>
+      {page < 18 && <Button style={{ zIndex: 10 }} onClick={() => prevPage()}>&larr;</Button>}
       </div>
     </>
   )

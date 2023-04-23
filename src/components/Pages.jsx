@@ -11,6 +11,9 @@ import q2_phone from '../assets/q2_phone.svg'
 import q2_seeds from '../assets/q2_seeds.svg'
 import q4_calc from '../assets/q4_calc.svg'
 import q4_notebook from '../assets/q4_notebook.svg'
+import modal from '../assets/modal.svg'
+import modal2 from '../assets/modal2.svg'
+import content from '../assets/content.svg'
 
 
 const VertCenter = styled.div`
@@ -293,6 +296,62 @@ const Pages = ({ page, nextPage }) => {
                   next={() => nextPage()}
                 />
               </AnimationContent>
+            case 11:
+                return <AnimationContent key="11">
+                    <br/>
+                    <br/>
+                    <h1>Congrats! You completed the adventure.</h1>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <br/>
+                    <m.div
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1, duration: 1 }}
+                    >
+                        <h2>Whats your web3 personality?</h2>
+                        <br/>
+                        <br/>
+                        <Button onClick={() => nextPage()}>Reveal results</Button>
+                    </m.div>
+                </AnimationContent>
+            case 12: 
+                return <AnimationContent key="12">
+                    <h2>
+                        You could be...
+                    </h2>
+                    <m.img
+                        src={modal}
+                        style={{ cursor: 'pointer' }}
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 1, x: 0 }}
+                        transition={{ delay: 1, duration: 1 }}
+                        onClick={() => nextPage()}
+                    />
+                </AnimationContent>
+            case 13: 
+                return <AnimationContent key="13">
+                    <m.img
+                        src={content}
+                        initial={{ opacity: 0, x: -100 }}
+                        animate={{ opacity: 0.6, x: 0 }}
+                        transition={{ duration: 0.5 }}
+                        width="1000px"
+                    />
+                    <div style={{position: 'absolute', top: '100px', left: '100px', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
+                    <m.img
+                        style={{ position: 'absolute', cursor: 'pointer' }}
+                        src={modal2}
+                        initial={{ opacity: 0, x: -200 }}
+                        animate={{ opacity: 1, x: -100, y: -100 }}
+                        transition={{ delay: 1, duration: 1 }}
+                        onClick={() => nextPage()}
+                    />
+                    </div>
+                </AnimationContent>
         }
     }
 
