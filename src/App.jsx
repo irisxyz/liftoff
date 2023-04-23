@@ -1,21 +1,33 @@
-import { useState } from 'react'
+import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
-import { motion as m, AnimatePresence } from 'framer-motion'
+import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 
+import spaceship from './assets/spaceship.svg'
 import Button from './components/Button'
 
-const Center = styled.div`
+const Background = styled(m.div)`
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: url(${spaceship});
+  z-index: 0;
+  background-size: cover;
+`
+
+const StyledCenter = styled.div`
   text-align: center;
   display: flex;
   min-height: 100vh;
   justify-content: center;
   position: relative;
+  overflow: hidden;
 `
 
 const Centered = styled.div`
   width: 1000px;
   margin: 6em;
+  z-index: 1;
 `
 
 const VertCenter = styled.div`
@@ -45,6 +57,31 @@ const QuestionButton = styled(Button)`
   font-size: 20px;
 `
 
+const Input = styled.input`
+  border: none;
+  border-radius: 8px;
+  padding: 0.5em;
+  font-size: 18px;
+  width: 550px;
+`
+
+
+const Center = ({ children, bg }) => {
+  const [scope, animate] = useAnimate()
+  
+  useEffect(() => {
+    animate(scope.current, { backgroundColor: bg }, { duration: 0.8, delay: 0.2 })
+  }, [bg])
+
+  return (
+    <StyledCenter ref={scope}>{children}</StyledCenter>
+  )
+}
+Center.propTypes = {
+  children: PropTypes.node,
+  bg: PropTypes.string,
+}
+
 const AnimationContent = ({ children, key, delay }) => {
   return (
     <m.div
@@ -65,13 +102,13 @@ AnimationContent.propTypes = {
   delay: PropTypes.bool,
 }
 
-const Question = ({ question, index, option1, option2, option3, next }) => {
+const Question = ({ question, index, option1, option2, option3, next, delay }) => {
   return <>
     <span>Question {index}/8</span>
     <m.h2
       initial={{ x: -100, opacity: 0 }}
       animate={{ x: 0, opacity: 1 }}
-      transition={{ duration: 0.4, ease: [0, 0.71, 0.2, 1.01] }}
+      transition={{ duration: 0.85, ease: [0, 0.71, 0.2, 1.01], delay: delay ? 1 : 0, }}
     >
       {question}
     </m.h2>
@@ -101,10 +138,12 @@ Question.propTypes = {
   option2: PropTypes.string,
   option3: PropTypes.string,
   next: PropTypes.func,
+  delay: PropTypes.bool,
 }
 
 function App() {
   const [page, setPage] = useState(0)
+  const [bg, setBg] = useState('#131415')
 
   const prevPage = () => {
     setPage(page - 1)
@@ -160,8 +199,13 @@ function App() {
       case 1:
         return <AnimationContent key="1">
           <VertCenter>
+            <div style={{ textAlign: 'left' }}>
+            <span>let’s personalize your journey.</span>
             <h1>What should we call you?</h1>
-            novia
+            </div>
+            <br/>
+            <Input/>
+            <br/>
             <br/>
             <Cta onClick={() => nextPage()}>Next</Cta>
           </VertCenter>
@@ -175,7 +219,7 @@ function App() {
           </VertCenter>
         </AnimationContent>
       case 3:
-        return <AnimationContent key="3">
+        return <AnimationContent key="3" delay>
           <Question
             index="1"
             question="Your primary objective is to investigate life in space life in space. What's your secret secondary objective?"
@@ -265,9 +309,26 @@ function App() {
     }
   }
 
+  useEffect(() => {
+    if (page < 3) {
+      setBg('#131415')
+    }
+    if (page === 3) {
+      setBg('#5134C5')
+    }
+  }, [page, setBg])
+
   return (
     <>
-      <Center>
+      <Center bg={bg}>
+        <AnimatePresence>
+          {page > 2 && <Background
+            initial={{ opacity: 0, scale: 6 }}
+            animate={{ opacity: 1, scale: 1 }}
+            exit={{ opacity: 0, scale: 6 }}
+            transition={{ delay: 0.2, duration: 1 }}
+          />}
+        </AnimatePresence>
         <Centered>
           <AnimatePresence mode="wait">
             {pageDisplay()}
