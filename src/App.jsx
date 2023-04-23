@@ -87,14 +87,14 @@ function App() {
     <>
       <Center bg={bg}>
         <AnimatePresence mode="wait">
-          {page > 2 && page < 12 && <Background
+          {page > 2 && page < 11 && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 6 }}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           />}
-          {page > 2 && page < 12 && <Foreground
+          {page > 2 && page < 11 && <Foreground
             key="foreground"
             src={bottom}
             initial={{ opacity: 0, y: 600 }}

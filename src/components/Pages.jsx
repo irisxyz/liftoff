@@ -61,6 +61,11 @@ const QuestionButton = styled(Button)`
   font-size: 20px;
 `
 
+const Text = styled.div`
+    max-width: 600px;
+    font-size: 18px;
+`
+
 const AnimationContent = ({ children, key, delay }) => {
     return (
         <m.div
@@ -301,10 +306,25 @@ const Pages = ({ page, nextPage }) => {
                     <br/>
                     <br/>
                     <h1>Congrats! You completed the adventure.</h1>
-                    <br/>
-                    <br/>
-                    <br/>
-                    <br/>
+                    <Text>
+                        <p>
+                            You prepared for your journey to space and saved the crew from an
+                            anomaly, becoming a hero in the process.
+                        </p> 
+                        <p>
+                            The world of web3 is vast and ever-expanding, just like space. We know 
+                            that figuring out what web3 is, and figuring how to learn key concepts, is difficult. 
+                        </p>
+                        <p>
+                            Through your completion of this personality test, we will help guide you. 
+                            Using your answers, we’re able to show you one of six potential web3 
+                            “personalities” or niches that suits your interests and passions.
+                        </p>
+                        <p>
+                            This quiz is just the start!
+                        </p>
+                    </Text>
+                    <img src={q1_rock} style={{ position: 'absolute', top: '13vh', right: '20em' }}/>
                     <br/>
                     <br/>
                     <m.div
@@ -312,10 +332,9 @@ const Pages = ({ page, nextPage }) => {
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1, duration: 1 }}
                     >
-                        <h2>Whats your web3 personality?</h2>
+                        <h2>Are you ready to find out your results?</h2>
                         <br/>
-                        <br/>
-                        <Button onClick={() => nextPage()}>Reveal results</Button>
+                        <Button onClick={() => nextPage()}>Hell yea!</Button>
                     </m.div>
                 </AnimationContent>
             case 12: 
@@ -325,7 +344,7 @@ const Pages = ({ page, nextPage }) => {
                     </h2>
                     <m.img
                         src={modal}
-                        style={{ cursor: 'pointer' }}
+                        style={{ cursor: 'pointer', marginLeft: '9em' }}
                         initial={{ opacity: 0, x: -100 }}
                         animate={{ opacity: 1, x: 0 }}
                         transition={{ delay: 1, duration: 1 }}
@@ -339,14 +358,14 @@ const Pages = ({ page, nextPage }) => {
                         initial={{ opacity: 0, x: -100 }}
                         animate={{ opacity: 0.6, x: 0 }}
                         transition={{ duration: 0.5 }}
-                        width="1000px"
+                        width="1200px"
                     />
                     <div style={{position: 'absolute', top: '100px', left: '100px', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <m.img
                         style={{ position: 'absolute', cursor: 'pointer' }}
                         src={modal2}
-                        initial={{ opacity: 0, x: -200 }}
-                        animate={{ opacity: 1, x: -100, y: -100 }}
+                        initial={{ opacity: 0, x: -200, y: -200 }}
+                        animate={{ opacity: 1, x: -100, y: -200 }}
                         transition={{ delay: 1, duration: 1 }}
                         onClick={() => nextPage()}
                     />

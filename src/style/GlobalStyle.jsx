@@ -27,6 +27,9 @@ h1 {
 h2 {
   font-size: 36px;
 }
+p {
+  color: #A89DD9;
+}
 a {
   color: ${p => p.theme.primary};
   text-decoration: none;
