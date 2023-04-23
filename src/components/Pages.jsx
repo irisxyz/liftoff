@@ -20,6 +20,7 @@ import d_q5 from '../assets/d_q5.svg'
 import d_q6 from '../assets/d_q6.svg'
 import d_q7 from '../assets/d_q7.svg'
 import d_q8 from '../assets/d_q8.svg'
+import twitter from '../assets/twitter.svg'
 
 
 const VertCenter = styled.div`
@@ -390,6 +391,29 @@ const Pages = ({ page, nextPage }) => {
                     />
                     </div>
                 </AnimationContent>
+            case 14: 
+                return <AnimationContent key="14">
+                    <div style={{
+                        position: 'absolute',
+                        top: 0,
+                        left: 0,
+                        width: '100vw',
+                        marginTop: '6em',
+                        display: 'flex',
+                        flexDirection: 'column',
+                        alignItems: 'center'
+                        }}>
+                        <img src={q1_rock} height="350px"/>
+                        <h1>Congrats {name}!</h1>
+                        <br/>
+                        <P>You completed the Liftoff web3 personality quiz!</P>
+                        <p>Stay tuned for more.</p>
+                        <Modal href="https://twitter.com/liftoff_quest" target="_blank" rel="noopener noreferrer">
+                            <img src={twitter} height="20px"/>
+                            @liftoff_quest
+                        </Modal>
+                    </div>
+                </AnimationContent>
         }
     }
 
@@ -404,5 +428,29 @@ Pages.propTypes = {
     page: PropTypes.number,
     nextPage: PropTypes.func,
 }
+
+const P = styled.p`
+    font-size: 24px;
+    margin: 0;
+`
+
+const Modal = styled.a`
+    font-size: 18px;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0.5em;
+    border-radius: 8px;
+    color: white;
+    background: #25137E;
+    box-shadow: 1px 2px 22px rgba(26, 16, 72, 1);
+    transition: all 200ms;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    :hover {
+        background: #1C0C66;
+        text-decoration: none;
+    }
+`
 
 export default Pages
