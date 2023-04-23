@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 
 import spaceship from './assets/spaceship.svg'
+import bottom from './assets/bottom.svg'
 import Button from './components/Button'
 
 const Background = styled(m.div)`
@@ -13,6 +14,13 @@ const Background = styled(m.div)`
   background: url(${spaceship});
   z-index: 0;
   background-size: cover;
+  background-position: center;
+`
+const Foreground = styled(m.img)`
+  min-width: 100vw;
+  position: absolute;
+  bottom: 0;
+  z-index: 1;
 `
 
 const StyledCenter = styled.div`
@@ -26,7 +34,7 @@ const StyledCenter = styled.div`
 
 const Centered = styled.div`
   width: 1000px;
-  margin: 6em;
+  margin: 7em;
   z-index: 1;
 `
 
@@ -90,7 +98,7 @@ const AnimationContent = ({ children, key, delay }) => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 1 }}
       exit={{ opacity: 0 }}
-      transition={{ duration: 0.3, delay: delay ? 0.3 : 0 }}
+      transition={{ duration: 0.3, delay: delay ? 0.2 : 0 }}
     >
       {children}
     </m.div>
@@ -222,7 +230,7 @@ function App() {
         return <AnimationContent key="3" delay>
           <Question
             index="1"
-            question="Your primary objective is to investigate life in space life in space. What's your secret secondary objective?"
+            question="Your primary objective is to investigate life in space. What's your secret secondary objective?"
             option1="Collecting rare and mesmerizing rock and energy formations"
             option2="Discover alternative sources of clean energy to bring back to earth"
             option3="Mining valuable resources from asteroids"
@@ -314,19 +322,28 @@ function App() {
       setBg('#131415')
     }
     if (page === 3) {
-      setBg('#5134C5')
+      setBg('#160F66')
     }
   }, [page, setBg])
 
   return (
     <>
       <Center bg={bg}>
-        <AnimatePresence>
+        <AnimatePresence mode="wait">
           {page > 2 && <Background
+            key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 6 }}
-            transition={{ delay: 0.2, duration: 1 }}
+            transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
+          />}
+          {page >= 3 && <Foreground
+            key="foreground"
+            src={bottom}
+            initial={{ opacity: 0, y: 600 }}
+            animate={{ opacity: 1, y: 0 }}
+            exit={{ opacity: 0, y: 600 }}
+            transition={{ delay: 0.7, duration: 0.8, ease: "easeOut" }}
           />}
         </AnimatePresence>
         <Centered>
@@ -336,9 +353,7 @@ function App() {
         </Centered>
       </Center>
       <div style={{position: 'absolute', top: 0}}>
-      <Button onClick={() => prevPage()}>back</Button>
-      {page}
-      <Button onClick={() => nextPage()}>next</Button>
+      <Button onClick={() => prevPage()}>&larr;</Button>
       </div>
     </>
   )
