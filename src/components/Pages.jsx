@@ -3,6 +3,15 @@ import styled from 'styled-components'
 import { AnimatePresence, motion as m } from 'framer-motion'
 
 import Button from './Button'
+import q1_nametag from '../assets/q1_nametag.svg'
+import q1_notebook from '../assets/q1_notebook.svg'
+import q1_rock from '../assets/q1_rock.svg'
+import q2_camera from '../assets/q2_camera.svg'
+import q2_phone from '../assets/q2_phone.svg'
+import q2_seeds from '../assets/q2_seeds.svg'
+import q4_calc from '../assets/q4_calc.svg'
+import q4_notebook from '../assets/q4_notebook.svg'
+
 
 const VertCenter = styled.div`
   height: 100%;
@@ -23,6 +32,16 @@ const Input = styled.input`
   padding: 0.5em;
   font-size: 18px;
   width: 550px;
+`
+
+const Images = styled(m.div)`
+  margin: 2em 0;
+`
+
+const Image = styled(m.img)`
+    max-height: 300px;
+    max-width: 300px;
+    margin: 0 2em;
 `
 
 const Buttons = styled.div`
@@ -61,7 +80,7 @@ delay: PropTypes.bool,
 
   
 
-const Question = ({ question, index, option1, option2, option3, next, delay }) => {
+const Question = ({ question, index, option1, option2, option3, next, delay, children }) => {
     return <>
         <span>Question {index}/8</span>
         <m.h2
@@ -71,6 +90,9 @@ const Question = ({ question, index, option1, option2, option3, next, delay }) =
         >
             {question}
         </m.h2>
+        <Images>
+            {children}
+        </Images>
         <Buttons>
             <QuestionButton
             onClick={() => next()}
@@ -91,13 +113,14 @@ const Question = ({ question, index, option1, option2, option3, next, delay }) =
         </>
 }
 Question.propTypes = {
-index: PropTypes.string,
-question: PropTypes.string,
-option1: PropTypes.string,
-option2: PropTypes.string,
-option3: PropTypes.string,
-next: PropTypes.func,
-delay: PropTypes.bool,
+    index: PropTypes.string,
+    question: PropTypes.string,
+    option1: PropTypes.string,
+    option2: PropTypes.string,
+    option3: PropTypes.string,
+    next: PropTypes.func,
+    delay: PropTypes.bool,
+    children: PropTypes.node,
 }
 
 const Pages = ({ page, nextPage }) => {
@@ -175,7 +198,10 @@ const Pages = ({ page, nextPage }) => {
                   option2="Discover alternative sources of clean energy to bring back to earth"
                   option3="Mining valuable resources from asteroids"
                   next={() => nextPage()}
-                />
+                >
+                    <Image src={q1_rock} />
+                    <Image src={q1_rock} />
+                </Question>
               </AnimationContent>
             case 4:
               return <AnimationContent key="4">
@@ -186,7 +212,11 @@ const Pages = ({ page, nextPage }) => {
                   option2="A journal to record the unique characteristics and behaviors of each life form you encounter"
                   option3="A social relations expert and translator to interact with extraterrestrial life"
                   next={() => nextPage()}
-                />
+                >
+                    <Image src={q1_rock} />
+                    <Image src={q1_notebook} />
+                    <Image src={q1_nametag} />
+                </Question>
               </AnimationContent>
             case 5:
               return <AnimationContent key="5">
@@ -197,7 +227,11 @@ const Pages = ({ page, nextPage }) => {
                   option2="A camera to capture breathtaking photos of cosmic phenomena"
                   option3="Organic seeds for growing your own crops in space"
                   next={() => nextPage()}
-                />
+                >
+                    <Image src={q2_phone} />
+                    <Image src={q2_camera} />
+                    <Image src={q2_seeds} />
+                </Question>
               </AnimationContent>
             case 6:
               return <AnimationContent key="6">
@@ -208,7 +242,11 @@ const Pages = ({ page, nextPage }) => {
                   option2="Take a selfie and post it to ask your followers for guidance"
                   option3="Calculate the risk to reward ratio of welcoming the anomaly onboard your ship"
                   next={() => nextPage()}
-                />
+                >
+                    <Image src={q4_notebook} />
+                    <Image src={q2_phone} />
+                    <Image src={q4_calc} />
+                </Question>
               </AnimationContent>
             case 7:
               return <AnimationContent key="7">

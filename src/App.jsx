@@ -17,6 +17,7 @@ const Background = styled(m.div)`
   background-size: cover;
   background-position: center;
 `
+
 const Foreground = styled(m.img)`
   min-width: 100vw;
   position: absolute;
@@ -38,7 +39,6 @@ const Centered = styled.div`
   margin: 7em;
   z-index: 1;
 `
-
 
 const Center = ({ children, bg }) => {
   const [scope, animate] = useAnimate()
