@@ -1,3 +1,4 @@
+import { useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { AnimatePresence, motion as m } from 'framer-motion'
@@ -19,7 +20,6 @@ import d_q5 from '../assets/d_q5.svg'
 import d_q6 from '../assets/d_q6.svg'
 import d_q7 from '../assets/d_q7.svg'
 import d_q8 from '../assets/d_q8.svg'
-import d_spaceship from '../assets/d_spaceship.svg'
 
 
 const VertCenter = styled.div`
@@ -142,7 +142,9 @@ Question.propTypes = {
     children: PropTypes.node,
 }
 
-const Pages = ({ page, nextPage }) => {
+const Pages = ({ page, nextPage }) => {  
+    const [name, setName] = useState('')
+
     const pages = () => {
         switch(page) {
             case 0:
@@ -194,16 +196,16 @@ const Pages = ({ page, nextPage }) => {
                   <h1>What should we call you?</h1>
                   </div>
                   <br/>
-                  <Input/>
+                  <Input onChange={(e) => setName(e.target.value)}/>
                   <br/>
                   <br/>
-                  <Cta onClick={() => nextPage()}>Next</Cta>
+                  <Cta onClick={() => {if (name) nextPage()}}>Next</Cta>
                 </VertCenter>
               </AnimationContent>
             case 2:
               return <AnimationContent key="2">
                 <VertCenter>
-                  <h2>Welcome Novia! You are embarking on an expedition to discover life in space. Along this journey you make several key decisions, so choose carefully.</h2>
+                  <h2>Welcome {name}! You are embarking on an expedition to discover life in space. Along this journey you make several key decisions, so choose carefully.</h2>
                   <br/>
                   <Cta onClick={() => nextPage()}>Next</Cta>
                 </VertCenter>
@@ -322,15 +324,15 @@ const Pages = ({ page, nextPage }) => {
                 return <AnimationContent key="11">
                     <br/>
                     <br/>
-                    <h1>Congrats! You completed the adventure.</h1>
+                    <h1>Congrats {name}! You completed the adventure.</h1>
                     <Text>
                         <p>
                             You prepared for your journey to space and saved the crew from an
                             anomaly, becoming a hero in the process.
                         </p> 
                         <p>
-                            The world of web3 is vast and ever-expanding, just like space. We know 
-                            that figuring out what web3 is, and figuring how to learn key concepts, is difficult. 
+                            The world of web3 is vast and ever-expanding, just like space. We know
+                            that figuring out what web3 is and learning key concepts is difficult. 
                         </p>
                         <p>
                             Through your completion of this personality test, we will help guide you. 
@@ -351,7 +353,7 @@ const Pages = ({ page, nextPage }) => {
                     >
                         <h2>Are you ready to find out your results?</h2>
                         <br/>
-                        <Button onClick={() => nextPage()}>Hell yea!</Button>
+                        <Button onClick={() => nextPage()}>Heck yea!</Button>
                     </m.div>
                 </AnimationContent>
             case 12: 
