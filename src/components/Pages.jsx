@@ -95,6 +95,30 @@ const Text = styled.div`
     font-size: 18px;
 `
 
+const P = styled.p`
+    font-size: 24px;
+    margin: 0;
+`
+
+const Modal = styled.a`
+    font-size: 18px;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0.5em;
+    border-radius: 8px;
+    color: white;
+    background: #25137E;
+    box-shadow: 1px 2px 22px rgba(26, 16, 72, 1);
+    transition: all 200ms;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    :hover {
+        background: #1C0C66;
+        text-decoration: none;
+    }
+`
+
 const AnimationContent = ({ children, key, delay }) => {
     return (
         <m.div
@@ -377,7 +401,7 @@ const Pages = ({ page, nextPage, prevPage }) => {
                             This quiz is just the start!
                         </p>
                     </Text>
-                    <img src={q2_gem} style={{ position: 'absolute', top: '13vh', right: '20em' }}/>
+                    <img src={q2_gem} style={{ position: 'absolute', top: '18vh', right: '20em', height: '450px'}}/>
                     <br/>
                     <br/>
                     <m.div
@@ -436,7 +460,7 @@ const Pages = ({ page, nextPage, prevPage }) => {
                         flexDirection: 'column',
                         alignItems: 'center'
                         }}>
-                        <img src={q2_gem} height="350px"/>
+                        <img src={q2_gem} height="300px"/>
                         <h1>Congrats {name}!</h1>
                         <br/>
                         <P>You completed the Liftoff web3 personality quiz!</P>
@@ -462,29 +486,5 @@ Pages.propTypes = {
     nextPage: PropTypes.func,
     prevPage: PropTypes.func,
 }
-
-const P = styled.p`
-    font-size: 24px;
-    margin: 0;
-`
-
-const Modal = styled.a`
-    font-size: 18px;
-    text-decoration: none;
-    padding: 1em 2em;
-    margin: 0.5em;
-    border-radius: 8px;
-    color: white;
-    background: #25137E;
-    box-shadow: 1px 2px 22px rgba(26, 16, 72, 1);
-    transition: all 200ms;
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-    :hover {
-        background: #1C0C66;
-        text-decoration: none;
-    }
-`
 
 export default Pages
