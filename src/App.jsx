@@ -41,10 +41,14 @@ const Centered = styled.div`
 `
 
 const BackButton = styled(Button)`
+  display: flex;
   z-index: 10;
-  top: 7.6em;
-  left: 7em;
-  padding: 2em 2.5em;
+  position: fixed;
+  top: 1em;
+  left: 4em;
+  margin-top: 0.5em;
+  padding: 1.5em 2.5em;
+
 `
 
 const BetaIconWrapper = styled.div`
@@ -147,11 +151,11 @@ function App() {
           />}
         </AnimatePresence>
         <Centered>
-          <Pages page={page} nextPage={nextPage} prevPage={prevPage}/>
+          <Pages page={page} nextPage={nextPage} />
         </Centered>
       </Center>
       <div style={{position: 'absolute', top: '1em', left: '1em' }}>
-      {(page > 2 && page < 14) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
+      {(page > 0) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
       </div>
       <Beta />
     </>
