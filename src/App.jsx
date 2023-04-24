@@ -42,7 +42,43 @@ const Centered = styled.div`
 
 const BackButton = styled(Button)`
   z-index: 10;
+  top: 7.6em;
+  left: 7em;
+  padding: 2em 2.5em;
 `
+
+const BetaIconWrapper = styled.div`
+  display: flex;
+  align-items: center;
+  height: 1.5em;
+  width: 3em;
+  justify-content: center;
+  border-radius: 1.5em;
+  border: 2px solid #3986FC;
+  padding: 0.5em 1.5em;
+  text-align: center;
+  font-size: 14px;
+  font-weight: bold;
+  background-color: #242F72;
+  position: fixed;
+  top: 1em;
+  right: 25em;
+  margin-top: 0.5em;
+`;
+
+const BetaText = styled.span`
+  display: inline-block;
+  transform-origin: center;
+  color: #3986FC;
+`;
+
+const Beta = () => {
+  return (
+    <BetaIconWrapper>
+      <BetaText>BETA</BetaText>
+    </BetaIconWrapper>
+  )
+}
 
 const Center = ({ children, bg }) => {
   const [scope, animate] = useAnimate()
@@ -111,12 +147,13 @@ function App() {
           />}
         </AnimatePresence>
         <Centered>
-          <Pages page={page} nextPage={nextPage}/>
+          <Pages page={page} nextPage={nextPage} prevPage={prevPage}/>
         </Centered>
       </Center>
       <div style={{position: 'absolute', top: '1em', left: '1em' }}>
-      {(page > 0 && page < 14) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
+      {(page > 2 && page < 14) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
       </div>
+      <Beta />
     </>
   )
 }

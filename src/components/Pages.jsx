@@ -42,6 +42,12 @@ const VertCenter = styled.div`
   flex-direction: column;
 `
 
+const ButtonContainer = styled.div`
+  display: flex;
+  justify-content: space-between;
+  gap: 2em;
+`;
+
 const Cta = styled(Button)`
   align-self: center;
   font-size: 20px;
@@ -154,7 +160,7 @@ Question.propTypes = {
     children: PropTypes.node,
 }
 
-const Pages = ({ page, nextPage }) => {  
+const Pages = ({ page, nextPage, prevPage }) => {  
     const [name, setName] = useState('')
 
     const pages = () => {
@@ -211,7 +217,10 @@ const Pages = ({ page, nextPage }) => {
                   <Input onChange={(e) => setName(e.target.value)} onKeyDown={(e) => {if (name && e.key === 'Enter') nextPage()}}/>
                   <br/>
                   <br/>
-                  <Cta onClick={() => {if (name) nextPage()}}>Next</Cta>
+                  <ButtonContainer>
+                    <Cta onClick={() => prevPage()}>&larr;</Cta>
+                    <Cta onClick={() => {if (name) nextPage()}}>Next</Cta>
+                  </ButtonContainer>
                 </VertCenter>
               </AnimationContent>
             case 2:
@@ -219,7 +228,10 @@ const Pages = ({ page, nextPage }) => {
                 <VertCenter>
                   <h2>Welcome {name}! You are embarking on an expedition to discover life in space. Along this journey you make several key decisions, so choose carefully.</h2>
                   <br/>
-                  <Cta onClick={() => nextPage()}>Next</Cta>
+                  <ButtonContainer>
+                    <Cta onClick={() => prevPage()}>&larr;</Cta>
+                    <Cta onClick={() => nextPage()}>Next</Cta>
+                  </ButtonContainer>
                 </VertCenter>
               </AnimationContent>
             case 3:
@@ -448,6 +460,7 @@ const Pages = ({ page, nextPage }) => {
 Pages.propTypes = {
     page: PropTypes.number,
     nextPage: PropTypes.func,
+    prevPage: PropTypes.func,
 }
 
 const P = styled.p`
