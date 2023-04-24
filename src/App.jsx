@@ -90,7 +90,7 @@ function App() {
     <>
       <Center bg={bg}>
         <AnimatePresence mode="wait">
-          {(page > 2 && page < 11) || (page > 13) && <Background
+          {((page > 2 && page < 11) || (page > 13)) && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
