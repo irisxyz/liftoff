@@ -93,9 +93,9 @@ const AnimationContent = ({ children, key, delay }) => {
     )
 }
 AnimationContent.propTypes = {
-children: PropTypes.node,
-key: PropTypes.string,
-delay: PropTypes.bool,
+  children: PropTypes.node,
+  key: PropTypes.string,
+  delay: PropTypes.bool,
 }
 
   
@@ -197,7 +197,7 @@ const Pages = ({ page, nextPage }) => {
                   <h1>What should we call you?</h1>
                   </div>
                   <br/>
-                  <Input onChange={(e) => setName(e.target.value)}/>
+                  <Input onChange={(e) => setName(e.target.value)} onKeyDown={(e) => {if (name && e.key === 'Enter') nextPage()}}/>
                   <br/>
                   <br/>
                   <Cta onClick={() => {if (name) nextPage()}}>Next</Cta>

@@ -81,7 +81,7 @@ function App() {
     if (page > 11) {
       setBg('#39375D')
     }
-    if (page >13) {
+    if (page > 13) {
       setBg('#160F66')
     }
   }, [page, setBg])
@@ -90,7 +90,7 @@ function App() {
     <>
       <Center bg={bg}>
         <AnimatePresence mode="wait">
-          {(page > 2 && page < 11) || (page > 13) && <Background
+          {((page > 2 && page < 11) || (page > 13)) && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
@@ -111,7 +111,7 @@ function App() {
         </Centered>
       </Center>
       <div style={{position: 'absolute', top: '1em', left: '1em' }}>
-      {page < 14 && <Button style={{ zIndex: 10 }} onClick={() => prevPage()}>&larr;</Button>}
+      {(page > 0 && page < 14) && <Button style={{ zIndex: 10 }} onClick={() => prevPage()}>&larr;</Button>}
       </div>
     </>
   )
