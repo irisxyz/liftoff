@@ -40,6 +40,10 @@ const Centered = styled.div`
   z-index: 1;
 `
 
+const BackButton = styled(Button)`
+  z-index: 10;
+`
+
 const Center = ({ children, bg }) => {
   const [scope, animate] = useAnimate()
   
@@ -97,7 +101,7 @@ function App() {
             exit={{ opacity: 0, scale: 6 }}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
           />}
-          {(page > 2 && page < 11) || (page > 13)  && <Foreground
+          {((page > 2 && page < 11) || (page > 13))  && <Foreground
             key="foreground"
             src={bottom}
             initial={{ opacity: 0, y: 600 }}
@@ -111,7 +115,7 @@ function App() {
         </Centered>
       </Center>
       <div style={{position: 'absolute', top: '1em', left: '1em' }}>
-      {(page > 0 && page < 14) && <Button style={{ zIndex: 10 }} onClick={() => prevPage()}>&larr;</Button>}
+      {(page > 0 && page < 14) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
       </div>
     </>
   )
