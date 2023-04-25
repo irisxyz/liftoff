@@ -4,7 +4,7 @@ const PRIMITIVES = {
   primary01: '#FFFFFF',
   primary02: '#CCCED1',
   primary03: '#AAADB3',
-  primary04: '#71767B',
+  primary04: '#A89DD9',
   surface01: '#1C1D1F',
   surface02: '#232427',
   primary: '#2E1D98',

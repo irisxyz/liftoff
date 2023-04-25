@@ -85,8 +85,13 @@ const QuestionButton = styled(Button)`
 `
 
 const Text = styled.div`
-    max-width: 600px;
-    font-size: 18px;
+  max-width: 600px;
+  font-size: 18px;
+`
+
+const H4 = styled.h4`
+  color: ${p=>p.theme.textSecondary};
+  text-transform: uppercase;
 `
 
 const P = styled.p`
@@ -402,22 +407,22 @@ const Pages = ({ page, nextPage }) => {
                         <Button onClick={() => nextPage()}>Heck yea!</Button>
                     </m.div>
                 </AnimationContent>
+            // case 12: 
+            //     return <AnimationContent key="12">
+            //         <h2>
+            //             You could be...
+            //         </h2>
+            //         <m.img
+            //             src={modal}
+            //             style={{ cursor: 'pointer', marginLeft: '9em' }}
+            //             initial={{ opacity: 0, x: -100 }}
+            //             animate={{ opacity: 1, x: 0 }}
+            //             transition={{ delay: 1, duration: 1 }}
+            //             onClick={() => nextPage()}
+            //         />
+            //     </AnimationContent>
             case 12: 
                 return <AnimationContent key="12">
-                    <h2>
-                        You could be...
-                    </h2>
-                    <m.img
-                        src={modal}
-                        style={{ cursor: 'pointer', marginLeft: '9em' }}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        onClick={() => nextPage()}
-                    />
-                </AnimationContent>
-            case 13: 
-                return <AnimationContent key="13">
                     <m.img
                         src={content}
                         initial={{ opacity: 0, x: -100 }}
@@ -428,16 +433,16 @@ const Pages = ({ page, nextPage }) => {
                     <div style={{position: 'absolute', top: '100px', left: '100px', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
                     <m.img
                         style={{ position: 'absolute', cursor: 'pointer' }}
-                        src={modal2}
-                        initial={{ opacity: 0, x: -200, y: -200 }}
-                        animate={{ opacity: 1, x: -100, y: -200 }}
+                        src={modal}
+                        initial={{ opacity: 0, x: -200, y: -100 }}
+                        animate={{ opacity: 1, x: -100, y: -100 }}
                         transition={{ delay: 1, duration: 1 }}
                         onClick={() => nextPage()}
                     />
                     </div>
                 </AnimationContent>
-            case 14: 
-                return <AnimationContent key="14">
+            case 13: 
+                return <AnimationContent key="13">
                     <div style={{
                         position: 'absolute',
                         top: 0,
@@ -449,9 +454,10 @@ const Pages = ({ page, nextPage }) => {
                         alignItems: 'center'
                         }}>
                         <img src={q2_gem} height="300px"/>
-                        <h1>Congrats {name}!</h1>
+                        <h1>{name}, you're a Trailblazer!</h1>
                         <br/>
                         <P>You completed the Liftoff web3 personality quiz!</P>
+                        <P>Congrats on being one of the first 🎉</P>
                         <p>Stay tuned for more.</p>
                         <Modal href="https://twitter.com/liftoff_quest" target="_blank" rel="noopener noreferrer">
                             <img src={twitter} height="20px"/>
