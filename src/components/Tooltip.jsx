@@ -19,7 +19,7 @@ const TextContainer = styled.div`
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 12px;
-  width: 18em;
+  width: 17em;
 
   &::after {
     content: '';
