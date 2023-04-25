@@ -4,22 +4,33 @@ import styled from 'styled-components'
 import { AnimatePresence, motion as m } from 'framer-motion'
 
 import Button from './Button'
-import q1_nametag from '../assets/q1_nametag.svg'
-import q1_notebook from '../assets/q1_notebook.svg'
-import q1_rock from '../assets/q1_rock.svg'
-import q2_camera from '../assets/q2_camera.svg'
-import q2_phone from '../assets/q2_phone.svg'
-import q2_seeds from '../assets/q2_seeds.svg'
-import q4_calc from '../assets/q4_calc.svg'
-import q4_notebook from '../assets/q4_notebook.svg'
+import q1_asteroids from '../assets/q1_asteroids_selected.svg'
+import q1_energy from '../assets/q1_energy_selected.svg'
+import q1_rarerock from '../assets/q1_rarerock_selected.svg'
+import q2_gem from '../assets/q2_gem_selected.svg'
+import q2_nametag from '../assets/q2_nametag_selected.svg'
+import q2_notebook from '../assets/q2_notebook_selected.svg'
+import q3_camera from '../assets/q3_camera_selected.svg'
+import q3_phone from '../assets/q3_phone_selected.svg'
+import q3_seeds from '../assets/q3_seeds_selected.svg'
+import q4_calc from '../assets/q4_calculator_selected.svg'
+import q4_notebook from '../assets/q4_notebook_selected.svg'
+import q5_cake from '../assets/q5_cakencookie_selected.svg'
+import q5_shroom from '../assets/q5_mushroom_selected.svg'
+import q5_serum from '../assets/q5_serum_selected.svg'
+import q6_ai from '../assets/q6_ai_selected.svg'
+import q6_artifact from '../assets/q6_artifact_selected.svg'
+import q6_music from '../assets/q6_music_selected.svg'
+import q7_ballot from '../assets/q7_ballot_selected.svg'
+import q7_connect from '../assets/q7_connect_selected.svg'
+import q7_money from '../assets/q7_money_selected.svg'
+import q8_awareness from '../assets/q8_awareness_selected.svg'
+import q8_invest from '../assets/q8_invest_selected.svg'
+import q8_return from '../assets/q8_return_selected.svg'
 import modal from '../assets/modal.svg'
 import modal2 from '../assets/modal2.svg'
 import content from '../assets/content.svg'
 import d_q4 from '../assets/d_q4.svg'
-import d_q5 from '../assets/d_q5.svg'
-import d_q6 from '../assets/d_q6.svg'
-import d_q7 from '../assets/d_q7.svg'
-import d_q8 from '../assets/d_q8.svg'
 import twitter from '../assets/twitter.svg'
 
 
@@ -51,7 +62,7 @@ const Images = styled(m.div)`
 const Image = styled(m.img)`
     max-height: 300px;
     max-width: 300px;
-    margin: 0 2em;
+    margin: 0 1em;
 `
 
 const Illustration = styled(m.img)`
@@ -76,6 +87,30 @@ const QuestionButton = styled(Button)`
 const Text = styled.div`
     max-width: 600px;
     font-size: 18px;
+`
+
+const P = styled.p`
+    font-size: 24px;
+    margin: 0;
+`
+
+const Modal = styled.a`
+    font-size: 18px;
+    text-decoration: none;
+    padding: 1em 2em;
+    margin: 0.5em;
+    border-radius: 8px;
+    color: white;
+    background: #25137E;
+    box-shadow: 1px 2px 22px rgba(26, 16, 72, 1);
+    transition: all 200ms;
+    display: flex;
+    gap: 0.5em;
+    align-items: center;
+    :hover {
+        background: #1C0C66;
+        text-decoration: none;
+    }
 `
 
 const AnimationContent = ({ children, key, delay }) => {
@@ -193,7 +228,7 @@ const Pages = ({ page, nextPage }) => {
               return <AnimationContent key="1">
                 <VertCenter>
                   <div style={{ textAlign: 'left' }}>
-                  <span>let’s personalize your journey.</span>
+                  <span>let’s get to know each other.</span>
                   <h1>What should we call you?</h1>
                   </div>
                   <br/>
@@ -221,7 +256,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="Mining valuable resources from asteroids"
                   next={() => nextPage()}
                 >
-                    <Illustration src={d_q4} />
+                    <Image src={q1_rarerock} />
+                    <Image src={q1_energy} />
+                    <Image src={q1_asteroids} />
                 </Question>
               </AnimationContent>
             case 4:
@@ -234,9 +271,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="A social relations expert and translator to interact with extraterrestrial life"
                   next={() => nextPage()}
                 >
-                    <Image src={q1_rock} />
-                    <Image src={q1_notebook} />
-                    <Image src={q1_nametag} />
+                    <Image src={q2_gem} />
+                    <Image src={q2_notebook} />
+                    <Image src={q2_nametag} />
                 </Question>
               </AnimationContent>
             case 5:
@@ -249,9 +286,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="Organic seeds for growing your own crops in space"
                   next={() => nextPage()}
                 >
-                    <Image src={q2_phone} />
-                    <Image src={q2_camera} />
-                    <Image src={q2_seeds} />
+                    <Image src={q3_phone} />
+                    <Image src={q3_camera} />
+                    <Image src={q3_seeds} />
                 </Question>
               </AnimationContent>
             case 6:
@@ -265,7 +302,7 @@ const Pages = ({ page, nextPage }) => {
                   next={() => nextPage()}
                 >
                     <Image src={q4_notebook} />
-                    <Image src={q2_phone} />
+                    <Image src={q3_phone} />
                     <Image src={q4_calc} />
                 </Question>
               </AnimationContent>
@@ -279,7 +316,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="Truth serum, so you can figure out exactly what the anomaly wants"
                   next={() => nextPage()}
                 >
-                    <Illustration src={d_q5} />
+                    <Image src={q5_cake} />
+                    <Image src={q5_shroom} />
+                    <Image src={q5_serum} />
                   </Question>
               </AnimationContent>
             case 8:
@@ -292,7 +331,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="Preserve the gibberish as an artifact so that museums can display it"
                   next={() => nextPage()}
                 >
-                    <Illustration src={d_q6} />
+                    <Image src={q6_music} />
+                    <Image src={q6_ai} />
+                    <Image src={q6_artifact} />
                   </Question>
               </AnimationContent>
             case 9:
@@ -305,7 +346,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="Have the crew vote on whether to let the anomaly take you to its destination"
                   next={() => nextPage()}
                 >
-                    <Illustration src={d_q7} />
+                    <Image src={q7_money} />
+                    <Image src={q7_connect} />
+                    <Image src={q7_ballot} />
                   </Question>
               </AnimationContent>
             case 10:
@@ -318,7 +361,9 @@ const Pages = ({ page, nextPage }) => {
                   option3="Find and invest in companies that specialize in anomalies as anomalies are the future"
                   next={() => nextPage()}
                 >
-                    <Illustration src={d_q8} />
+                    <Image src={q8_awareness} />
+                    <Image src={q8_return} />
+                    <Image src={q8_invest} />
                   </Question>
               </AnimationContent>
             case 11:
@@ -344,7 +389,7 @@ const Pages = ({ page, nextPage }) => {
                             This quiz is just the start!
                         </p>
                     </Text>
-                    <img src={q1_rock} style={{ position: 'absolute', top: '13vh', right: '20em' }}/>
+                    <img src={q2_gem} style={{ position: 'absolute', top: '18vh', right: '20em', height: '450px'}}/>
                     <br/>
                     <br/>
                     <m.div
@@ -403,7 +448,7 @@ const Pages = ({ page, nextPage }) => {
                         flexDirection: 'column',
                         alignItems: 'center'
                         }}>
-                        <img src={q1_rock} height="350px"/>
+                        <img src={q2_gem} height="300px"/>
                         <h1>Congrats {name}!</h1>
                         <br/>
                         <P>You completed the Liftoff web3 personality quiz!</P>
@@ -428,29 +473,5 @@ Pages.propTypes = {
     page: PropTypes.number,
     nextPage: PropTypes.func,
 }
-
-const P = styled.p`
-    font-size: 24px;
-    margin: 0;
-`
-
-const Modal = styled.a`
-    font-size: 18px;
-    text-decoration: none;
-    padding: 1em 2em;
-    margin: 0.5em;
-    border-radius: 8px;
-    color: white;
-    background: #25137E;
-    box-shadow: 1px 2px 22px rgba(26, 16, 72, 1);
-    transition: all 200ms;
-    display: flex;
-    gap: 0.5em;
-    align-items: center;
-    :hover {
-        background: #1C0C66;
-        text-decoration: none;
-    }
-`
 
 export default Pages
