@@ -124,10 +124,7 @@ function App() {
       setBg('#160F66')
     }
     if (page > 10) {
-      setBg('#090B5C')
-    }
-    if (page > 11) {
-      setBg('#39375D')
+      setBg('#0B0C3F')
     }
     if (page > 12) {
       setBg('#160F66')

@@ -17,7 +17,9 @@ const StyledButton = styled(Button)`
 const BackButton = ({ page, prevPage }) => {
   const { removeChoice } = useQuiz()
   const handleClick = () => {
-    removeChoice()
+    if (page > 2 && page < 11) {
+      removeChoice()      
+    }
     prevPage()
   }
   return (

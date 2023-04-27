@@ -457,31 +457,36 @@ const Pages = ({ page, nextPage }) => {
                     animate={{ opacity: 1, x: 0 }}
                     transition={{ delay: 1, duration: 1 }}
                   >
-                    <h2>Are you ready to find out your results?</h2>
+                    <h3>Are you ready to find out your results?</h3>
                     <br/>
                     <Button onClick={() => nextPage()}>Heck yea!</Button>
                   </m.div>
                 </AnimationContent>
             case 12: 
                 return <AnimationContent myKey="12">
-                  {/* {getPersonality()} */}
-                    <m.img
-                        src={content}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 0.6, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                        width="1200px"
-                    />
-                    <div style={{position: 'absolute', top: '100px', left: '100px', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <m.img
-                        style={{ position: 'absolute', cursor: 'pointer' }}
-                        src={modal}
-                        initial={{ opacity: 0, x: -200, y: -100 }}
-                        animate={{ opacity: 1, x: -100, y: -100 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        onClick={() => nextPage()}
-                    />
-                    </div>
+                  <m.h3
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    You could be...
+                  </m.h3>
+                  <m.h1
+                    style={{ textTransform: 'capitalize' }}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 1 }}
+                  >
+                    The {getPersonality()}
+                  </m.h1>
+                  <m.img
+                      style={{ cursor: 'pointer' }}
+                      src={modal}
+                      initial={{ opacity: 0, x: -120 }}
+                      animate={{ opacity: 1, x: -20 }}
+                      transition={{ delay: 2, duration: 0.7 }}
+                      onClick={() => nextPage()}
+                  />
                 </AnimationContent>
             case 13: 
                 return <AnimationContent myKey="13">

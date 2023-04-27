@@ -18,7 +18,7 @@ body {
   margin: 0;
   color: white;
 }
-h1, h2 {
+h1, h2, h3 {
   margin: 0;
 }
 h1 {
@@ -26,6 +26,9 @@ h1 {
 }
 h2 {
   font-size: 36px;
+}
+h3 {
+  font-size: 28px;
 }
 p {
   color: #A89DD9;
