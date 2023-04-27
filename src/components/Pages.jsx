@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { AnimatePresence, motion as m } from 'framer-motion'
 
 import Button from './Button'
+import useQuiz from './QuizProvider'
 import Tooltip from './Tooltip'
 import q1_asteroids from '../assets/q1_asteroids_selected.svg'
 import q1_energy from '../assets/q1_energy_selected.svg'
@@ -119,11 +120,11 @@ const Modal = styled.a`
     }
 `
 
-const AnimationContent = ({ children, key, delay }) => {
+const AnimationContent = ({ children, myKey, delay }) => {
     return (
         <m.div
             style={{ height: '100%', textAlign: 'left' }}
-            key={key}
+            key={myKey}
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
@@ -139,9 +140,25 @@ AnimationContent.propTypes = {
   delay: PropTypes.bool,
 }
 
-  
 
-const Question = ({ question, index, option1, option2, option3, next, delay, children }) => {
+const Question = ({
+  question,
+  index,
+  option1,
+  option2,
+  option3,
+  person1,
+  person2,
+  person3,
+  next,
+  delay,
+  children
+}) => {
+  const { addChoice } = useQuiz()
+  const handleOption = (option) => {
+    addChoice(option)
+    next()
+  }
     return <>
         <span>Question {index}/8</span>
         <m.h2
@@ -156,17 +173,17 @@ const Question = ({ question, index, option1, option2, option3, next, delay, chi
         </Images>
         <Buttons>
             <QuestionButton
-            onClick={() => next()}
+              onClick={() => handleOption(person1)}
             >
             {option1}
             </QuestionButton>
             <QuestionButton
-            onClick={() => next()}
+              onClick={() => handleOption(person2)}
             >
             {option2}
             </QuestionButton>
             <QuestionButton
-            onClick={() => next()}
+              onClick={() => handleOption(person3)}
             >
             {option3}
             </QuestionButton>
@@ -179,6 +196,9 @@ Question.propTypes = {
     option1: PropTypes.string,
     option2: PropTypes.string,
     option3: PropTypes.string,
+    person1: PropTypes.string,
+    person2: PropTypes.string,
+    person3: PropTypes.string,
     next: PropTypes.func,
     delay: PropTypes.bool,
     children: PropTypes.node,
@@ -190,7 +210,7 @@ const Pages = ({ page, nextPage }) => {
     const pages = () => {
         switch(page) {
             case 0:
-              return <AnimationContent key="0" delay>
+              return <AnimationContent myKey="0" delay>
                 <VertCenter>
                   <m.h1
                     initial={{ y: -50, opacity: 0 }}
@@ -231,7 +251,7 @@ const Pages = ({ page, nextPage }) => {
                 </VertCenter>
               </AnimationContent>
             case 1:
-              return <AnimationContent key="1">
+              return <AnimationContent myKey="1">
                 <VertCenter>
                   <div style={{ textAlign: 'left' }}>
                   <span>let’s get to know each other.</span>
@@ -245,7 +265,7 @@ const Pages = ({ page, nextPage }) => {
                 </VertCenter>
               </AnimationContent>
             case 2:
-              return <AnimationContent key="2">
+              return <AnimationContent myKey="2">
                 <VertCenter>
                   <h2>Welcome {name}! You are embarking on an expedition to discover life in space. Along this journey you make several key decisions, so choose carefully.</h2>
                   <br/>
@@ -253,13 +273,16 @@ const Pages = ({ page, nextPage }) => {
                 </VertCenter>
               </AnimationContent>
             case 3:
-              return <AnimationContent key="3" delay>
+              return <AnimationContent myKey="3" delay>
                 <Question
                   index="1"
                   question="Your primary objective is to investigate life in space. What's your secret secondary objective?"
                   option1="Collecting rare and mesmerizing rock and energy formations"
                   option2="Discover alternative sources of clean energy to bring back to earth"
                   option3="Mining valuable resources from asteroids"
+                  person1='collector'
+                  person2='disruptor'
+                  person3='investor'
                   next={() => nextPage()}
                 >
                     <Image src={q1_rarerock} />
@@ -268,13 +291,16 @@ const Pages = ({ page, nextPage }) => {
                 </Question>
               </AnimationContent>
             case 4:
-              return <AnimationContent key="4">
+              return <AnimationContent myKey="4">
                 <Question
                   index="2"
                   question="What are you bringing with you?"
                   option1="A variety of rare and expensive metals to use to trade with extraterrestrial life"
                   option2="A journal to record the unique characteristics and behaviors of each life form you encounter"
                   option3="A social relations expert and translator to interact with extraterrestrial life"
+                  person1='investor'
+                  person2='collector'
+                  person3='advocate'
                   next={() => nextPage()}
                 >
                     <Image src={q2_gem} />
@@ -283,13 +309,16 @@ const Pages = ({ page, nextPage }) => {
                 </Question>
               </AnimationContent>
             case 5:
-              return <AnimationContent key="5">
+              return <AnimationContent myKey="5">
                 <Question
                   index="3"
                   question="You have extra space in your bag. What do you grab?"
                   option1="Your phone so you can tweet progress reports to your followers "
                   option2="A camera to capture breathtaking photos of cosmic phenomena"
                   option3="Organic seeds for growing your own crops in space"
+                  person1='socialite'
+                  person2='creator'
+                  person3='disruptor'
                   next={() => nextPage()}
                 >
                     <Image src={q3_phone} />
@@ -298,13 +327,16 @@ const Pages = ({ page, nextPage }) => {
                 </Question>
               </AnimationContent>
             case 6:
-              return <AnimationContent key="6">
+              return <AnimationContent myKey="6">
                 <Question
                   index="4"
                   question="Your spacecraft encounters a mysterious anomaly in deep space! What do you do?"
                   option1="Pull out your notebook to quickly capture the anomaly's form"
                   option2="Take a selfie and post it to ask your followers for guidance"
                   option3="Calculate the risk to reward ratio of welcoming the anomaly onboard your ship"
+                  person1='creator'
+                  person2='socialite'
+                  person3='investor'
                   next={() => nextPage()}
                 >
                     <Image src={q4_notebook} />
@@ -313,13 +345,16 @@ const Pages = ({ page, nextPage }) => {
                 </Question>
               </AnimationContent>
             case 7:
-              return <AnimationContent key="7">
+              return <AnimationContent myKey="7">
                 <Question
                   index="5"
                   question="The anomaly is hungry. What do you feed it?"
                   option1="You want the anomaly to be your friend, so cookies and cake"
                   option2="Iridescent mushrooms that cause the anomaly to illuminate fluorescent patterns in space"
                   option3="Truth serum, so you can figure out exactly what the anomaly wants"
+                  person1='socialite'
+                  person2='creator'
+                  person3='advocate'
                   next={() => nextPage()}
                 >
                     <Image src={q5_cake} />
@@ -328,13 +363,16 @@ const Pages = ({ page, nextPage }) => {
                   </Question>
               </AnimationContent>
             case 8:
-              return <AnimationContent key="8">
+              return <AnimationContent myKey="8">
                 <Question
                   index="6"
                   question="The anomaly corrupts your ships logs and changes them to gibberish! What's your first course of action?"
                   option1="Generate music from the distorted logs and make a soundtrack"
                   option2="Use AI to find patterns in the gibberish"
                   option3="Preserve the gibberish as an artifact so that museums can display it"
+                  person1='creator'
+                  person2='disruptor'
+                  person3='collector'
                   next={() => nextPage()}
                 >
                     <Image src={q6_music} />
@@ -343,13 +381,16 @@ const Pages = ({ page, nextPage }) => {
                   </Question>
               </AnimationContent>
             case 9:
-              return <AnimationContent key="9">
+              return <AnimationContent myKey="9">
                 <Question
                   index="7"
                   question="Oh no! The anomaly causes your ship’s navigation system to go haywire and throws you off course. What do you do?"
                   option1="Offer the anomaly money to stop messing with your ship"
                   option2="Connect with mission control and fellow astronauts for support and guidance"
                   option3="Have the crew vote on whether to let the anomaly take you to its destination"
+                  person1='investor'
+                  person2='socialite'
+                  person3='advocate'
                   next={() => nextPage()}
                 >
                     <Image src={q7_money} />
@@ -358,13 +399,16 @@ const Pages = ({ page, nextPage }) => {
                   </Question>
               </AnimationContent>
             case 10:
-              return <AnimationContent key="10">
+              return <AnimationContent myKey="10">
                 <Question
                   index="8"
                   question="Your tactics work and you safely return to Earth as a hero! What do you do with your newfound fame?"
                   option1="Use the attention to raise awareness about the importance of empowerment of other sentient beings"
                   option2="Go back to space with a team of experts to investigate what intelligence and technology can be gathered from the anomaly"
                   option3="Find and invest in companies that specialize in anomalies as anomalies are the future"
+                  person1='advocate'
+                  person2='disruptor'
+                  person3='investor'
                   next={() => nextPage()}
                 >
                     <Image src={q8_awareness} />
@@ -373,7 +417,7 @@ const Pages = ({ page, nextPage }) => {
                   </Question>
               </AnimationContent>
             case 11:
-                return <AnimationContent key="11">
+                return <AnimationContent myKey="11">
                     <br/>
                     <br/>
                     <h1>Congrats {name}! You completed the adventure.</h1>
@@ -408,22 +452,8 @@ const Pages = ({ page, nextPage }) => {
                         <Button onClick={() => nextPage()}>Heck yea!</Button>
                     </m.div>
                 </AnimationContent>
-            // case 12: 
-            //     return <AnimationContent key="12">
-            //         <h2>
-            //             You could be...
-            //         </h2>
-            //         <m.img
-            //             src={modal}
-            //             style={{ cursor: 'pointer', marginLeft: '9em' }}
-            //             initial={{ opacity: 0, x: -100 }}
-            //             animate={{ opacity: 1, x: 0 }}
-            //             transition={{ delay: 1, duration: 1 }}
-            //             onClick={() => nextPage()}
-            //         />
-            //     </AnimationContent>
             case 12: 
-                return <AnimationContent key="12">
+                return <AnimationContent myKey="12">
                     <m.img
                         src={content}
                         initial={{ opacity: 0, x: -100 }}
@@ -443,7 +473,7 @@ const Pages = ({ page, nextPage }) => {
                     </div>
                 </AnimationContent>
             case 13: 
-                return <AnimationContent key="13">
+                return <AnimationContent myKey="13">
                     <div style={{
                         position: 'absolute',
                         top: 0,
