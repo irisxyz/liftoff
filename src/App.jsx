@@ -58,8 +58,9 @@ const BetaIconWrapper = styled.div`
   background-color: #242F72;
   position: fixed;
   top: 1em;
-  right: 25em;
+  right: 1em;
   margin-top: 0.5em;
+  margin-right: 0.5em;
 `;
 
 const BetaText = styled.span`

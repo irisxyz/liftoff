@@ -5,7 +5,7 @@ import { AnimatePresence, motion as m } from 'framer-motion'
 
 import Button from './Button'
 import useQuiz from './QuizProvider'
-
+import Tooltip from './Tooltip'
 import q1_asteroids from '../assets/q1_asteroids_selected.svg'
 import q1_energy from '../assets/q1_energy_selected.svg'
 import q1_rarerock from '../assets/q1_rarerock_selected.svg'
@@ -224,7 +224,7 @@ const Pages = ({ page, nextPage }) => {
                     transition={{
                       duration: 0.8,
                     }}
-                  >gm! it&apos;s time to liftoff.</m.h1>
+                  ><Tooltip /> it&apos;s time to liftoff.</m.h1>
                   <br/>
                   <br/>
                   <m.h2
