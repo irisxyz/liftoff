@@ -5,8 +5,10 @@ import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
+import {QuizProvider} from './components/QuizProvider'
 import Button from './components/Button'
 import Pages from './components/Pages'
+import useQuiz from './components/QuizProvider'
 
 const Background = styled(m.div)`
   height: 100vh;
@@ -131,7 +133,7 @@ function App() {
   }, [page, setBg])
 
   return (
-    <>
+    <QuizProvider>
       <Center bg={bg}>
         <AnimatePresence mode="wait">
           {((page > 2 && page < 11) || (page > 12)) && <Background
@@ -158,7 +160,7 @@ function App() {
       {(page > 0) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
       </div>
       <Beta />
-    </>
+    </QuizProvider>
   )
 }
 
