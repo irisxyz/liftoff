@@ -1,6 +1,7 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Analytics } from '@vercel/analytics/react'
 import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 
 import spaceship from './assets/spaceship.svg'
@@ -158,6 +159,7 @@ function App() {
       </Center>
       <BackButton page={page} prevPage={prevPage} />
       <Beta />
+      <Analytics/>
     </QuizProvider>
   )
 }
