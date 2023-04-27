@@ -6,6 +6,7 @@ import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
 import {QuizProvider} from './components/QuizProvider'
+import BackButton from './components/BackButton'
 import Button from './components/Button'
 import Pages from './components/Pages'
 import useQuiz from './components/QuizProvider'
@@ -40,17 +41,6 @@ const Centered = styled.div`
   width: 1000px;
   margin: 7em;
   z-index: 1;
-`
-
-const BackButton = styled(Button)`
-  display: flex;
-  z-index: 10;
-  position: fixed;
-  top: 1em;
-  left: 4em;
-  margin-top: 0.5em;
-  padding: 1.2em 2.5em;
-
 `
 
 const BetaIconWrapper = styled.div`
@@ -156,9 +146,7 @@ function App() {
           <Pages page={page} nextPage={nextPage} />
         </Centered>
       </Center>
-      <div style={{position: 'absolute', top: '1em', left: '1em' }}>
-      {(page > 0) && <BackButton onClick={() => prevPage()}>&larr;</BackButton>}
-      </div>
+      <BackButton page={page} prevPage={prevPage} />
       <Beta />
     </QuizProvider>
   )
