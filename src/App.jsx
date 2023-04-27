@@ -1,9 +1,10 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Analytics } from '@vercel/analytics/react'
-import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
+import { motion as m, useAnimate, useAnimation, AnimatePresence } from 'framer-motion'
 
+import stars from './assets/stars.svg'
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
 import grain from './assets/grain.png'
@@ -28,6 +29,15 @@ const Foreground = styled(m.img)`
   position: absolute;
   bottom: 0;
   z-index: 1;
+`
+
+const Stars = styled(m.div)`
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: url(${stars});
+  background-size: 80vh;
+  z-index: 0;
 `
 
 const Grain = styled.div`
@@ -108,6 +118,29 @@ Center.propTypes = {
 function App() {
   const [page, setPage] = useState(0)
   const [bg, setBg] = useState('#131415')
+  const [point, setPoint] = useState({ x: 0, y: 0 });
+  const { x, y } = point;
+  const ref = useRef();
+  
+  const showBg = () => ((page > 2 && page < 11) || (page > 12))
+
+  useEffect(() => {
+    if (!ref.current) return;
+
+    const handlePointerMove = ({ clientX, clientY }) => {
+      const element = ref.current;
+      const parallaxFactor = 35;
+      const x = (clientX - element.offsetLeft - element.offsetWidth / 2) / parallaxFactor;
+      const y = (clientY - element.offsetTop - element.offsetHeight / 2) / parallaxFactor;
+      setPoint({ x, y});
+    };
+
+    window.addEventListener("mousemove", handlePointerMove);
+
+    return () => {
+      window.removeEventListener("mousemove", handlePointerMove);
+    };
+  }, [showBg()]);
 
   const prevPage = () => {
     setPage(page - 1)
@@ -137,14 +170,21 @@ function App() {
       <Center bg={bg}>
         <Grain />
         <AnimatePresence mode="wait">
-          {((page > 2 && page < 11) || (page > 12)) && <Background
+          {showBg() && <Stars
+            src={stars}
+            ref={ref}
+            style={{
+              transform: `translate(${x}px, ${y}px)`,
+            }}
+           />}
+          {showBg() && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 6 }}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
-          />}
-          {((page > 2 && page < 11) || (page > 12))  && <Foreground
+           />}
+          {showBg()  && <Foreground
             key="foreground"
             src={bottom}
             initial={{ opacity: 0, y: 600 }}
