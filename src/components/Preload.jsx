@@ -28,7 +28,7 @@ import modal2 from '../assets/modal2.svg'
 import content from '../assets/content.svg'
 import d_q4 from '../assets/d_q4.svg'
 
-export const Preload1 = () => {
+const Preload1 = () => {
   return (
     <m.div
       initial={{ opacity: 0 }}
@@ -60,7 +60,7 @@ export const Preload2 = () => {
       initial={{ opacity: 0 }}
       animate={{ opacity: 0 }}
       transition={{ delay: 0.3 }}
-      style={{ height: 0, width: 0 }}
+      style={{ height: 0, width: 0, position: 'absolute', top: '100vh' }}
     >
       <img src={q6_ai} />
       <img src={q6_artifact} />
@@ -77,3 +77,5 @@ export const Preload2 = () => {
     </m.div>
   ) 
 }
+
+export default Preload1
