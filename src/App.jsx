@@ -5,6 +5,7 @@ import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
+import grain from './assets/grain.png'
 import {QuizProvider} from './components/QuizProvider'
 import BackButton from './components/BackButton'
 import Button from './components/Button'
@@ -28,6 +29,16 @@ const Foreground = styled(m.img)`
   z-index: 1;
 `
 
+const Grain = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: url(${grain});
+  background-size: 100px;
+  mix-blend-mode: overlay;
+  z-index: 2;
+`
+
 const StyledCenter = styled.div`
   text-align: center;
   display: flex;
@@ -40,7 +51,7 @@ const StyledCenter = styled.div`
 const Centered = styled.div`
   width: 1000px;
   margin: 7em;
-  z-index: 1;
+  z-index: 10;
 `
 
 const BetaIconWrapper = styled.div`
@@ -126,6 +137,7 @@ function App() {
   return (
     <QuizProvider>
       <Center bg={bg}>
+        <Grain />
         <AnimatePresence mode="wait">
           {((page > 2 && page < 11) || (page > 12)) && <Background
             key="background"
