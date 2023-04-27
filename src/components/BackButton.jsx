@@ -8,7 +8,7 @@ const StyledButton = styled(Button)`
   z-index: 10;
   position: fixed;
   top: 1em;
-  left: 4em;
+  left: 1em;
   margin-top: 0.5em;
   margin-left: 0.5em;
   padding: 1.2em 2.5em;
@@ -21,7 +21,7 @@ const BackButton = ({ page, prevPage }) => {
     prevPage()
   }
   return (
-    <div style={{position: 'absolute', top: '1em', left: '1em' }}>
+    <div>
       {page > 0 && <StyledButton onClick={() => handleClick()}>&larr;</StyledButton>}
     </div>
   )
