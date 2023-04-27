@@ -452,20 +452,6 @@ const Pages = ({ page, nextPage }) => {
                         <Button onClick={() => nextPage()}>Heck yea!</Button>
                     </m.div>
                 </AnimationContent>
-            // case 12: 
-            //     return <AnimationContent myKey="12">
-            //         <h2>
-            //             You could be...
-            //         </h2>
-            //         <m.img
-            //             src={modal}
-            //             style={{ cursor: 'pointer', marginLeft: '9em' }}
-            //             initial={{ opacity: 0, x: -100 }}
-            //             animate={{ opacity: 1, x: 0 }}
-            //             transition={{ delay: 1, duration: 1 }}
-            //             onClick={() => nextPage()}
-            //         />
-            //     </AnimationContent>
             case 12: 
                 return <AnimationContent myKey="12">
                     <m.img
