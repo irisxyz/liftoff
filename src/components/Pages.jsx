@@ -91,6 +91,11 @@ const Text = styled.div`
   font-size: 18px;
 `
 
+const Columns = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 const H4 = styled.h4`
   color: ${p=>p.theme.textSecondary};
   text-transform: uppercase;
@@ -205,7 +210,8 @@ Question.propTypes = {
 }
 
 const Pages = ({ page, nextPage }) => {  
-    const [name, setName] = useState('')
+  const [name, setName] = useState('')
+  const { getPersonality } = useQuiz()
 
     const pages = () => {
         switch(page) {
@@ -418,42 +424,44 @@ const Pages = ({ page, nextPage }) => {
               </AnimationContent>
             case 11:
                 return <AnimationContent myKey="11">
-                    <br/>
-                    <br/>
-                    <h1>Congrats {name}! You completed the adventure.</h1>
+                  <br/>
+                  <br/>
+                  <Columns>
                     <Text>
-                        <p>
-                            You prepared for your journey to space and saved the crew from an
-                            anomaly, becoming a hero in the process.
-                        </p> 
-                        <p>
-                            The world of web3 is vast and ever-expanding, just like space. We know
-                            that figuring out what web3 is and learning key concepts is difficult. 
-                        </p>
-                        <p>
-                            Through your completion of this personality test, we will help guide you. 
-                            Using your answers, we’re able to show you one of six potential web3 
-                            “personalities” or niches that suits your interests and passions.
-                        </p>
-                        <p>
-                            This quiz is just the start!
-                        </p>
+                      <h1>Congrats {name}! You completed the adventure.</h1>
+                      <p>
+                        You prepared for your journey to space and saved the crew from an
+                        anomaly, becoming a hero in the process.
+                      </p> 
+                      <p>
+                        The world of web3 is vast and ever-expanding, just like space. We know
+                        that figuring out what web3 is and learning key concepts is difficult. 
+                      </p>
+                      <p>
+                        Through your completion of this personality test, we will help guide you. 
+                        Using your answers, we’re able to show you one of six potential web3 
+                        “personalities” or niches that suits your interests and passions.
+                      </p>
+                      <p>
+                        This quiz is just the start!
+                      </p>
                     </Text>
-                    <img src={q2_gem} style={{ position: 'absolute', top: '18vh', right: '20em', height: '450px'}}/>
+                    <img src={q2_gem} style={{height: '420px'}}/>
+                  </Columns>
+                  <br/>
+                  <m.div
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1, duration: 1 }}
+                  >
+                    <h2>Are you ready to find out your results?</h2>
                     <br/>
-                    <br/>
-                    <m.div
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                    >
-                        <h2>Are you ready to find out your results?</h2>
-                        <br/>
-                        <Button onClick={() => nextPage()}>Heck yea!</Button>
-                    </m.div>
+                    <Button onClick={() => nextPage()}>Heck yea!</Button>
+                  </m.div>
                 </AnimationContent>
             case 12: 
                 return <AnimationContent myKey="12">
+                  {/* {getPersonality()} */}
                     <m.img
                         src={content}
                         initial={{ opacity: 0, x: -100 }}
