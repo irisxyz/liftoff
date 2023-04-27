@@ -134,7 +134,7 @@ const AnimationContent = ({ children, myKey, delay }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, delay: delay ? 0.2 : 0 }}
+            transition={{ duration: 0.6, delay: delay ? 0.2 : 0 }}
         >
             {children}
         </m.div>
