@@ -6,6 +6,7 @@ import { AnimatePresence, motion as m } from 'framer-motion'
 import Button from './Button'
 import useQuiz from './QuizProvider'
 import Tooltip from './Tooltip'
+import Preload from './Preload'
 import q1_asteroids from '../assets/q1_asteroids_selected.svg'
 import q1_energy from '../assets/q1_energy_selected.svg'
 import q1_rarerock from '../assets/q1_rarerock_selected.svg'
@@ -276,6 +277,7 @@ const Pages = ({ page, nextPage }) => {
                   <h2>Welcome {name}! You are embarking on an expedition to discover life in space. Along this journey you make several key decisions, so choose carefully.</h2>
                   <br/>
                   <Cta onClick={() => nextPage()}>Next</Cta>
+                  <Preload/>
                 </VertCenter>
               </AnimationContent>
             case 3:
