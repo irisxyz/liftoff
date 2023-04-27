@@ -38,6 +38,10 @@ const GmText = styled.span`
   color: #5A46D3;
 `
 
+const DefText = styled.div`
+  font-weight: normal;
+`
+
 const HorizontalLine = styled.hr`
   border: 0;
   border-top: 1.5px solid #5A46D3;
@@ -61,11 +65,11 @@ const Tooltip = () => {
       <TextContainer>
         <GmText>g•m <span style={{color: '#867FB1'}}>| giːɛm (GEE-em) |</span></GmText>
         <HorizontalLine />
-        <div>
+        <DefText>
             1. an abbreviation commonly used as shorthand for "good morning."
             <br />
             2. used as a common greeting within web3 communities
-        </div>
+        </DefText>
       </TextContainer>
     </TooltipContainer>
   );
