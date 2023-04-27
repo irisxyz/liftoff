@@ -10,6 +10,7 @@ const StyledButton = styled(Button)`
   top: 1em;
   left: 4em;
   margin-top: 0.5em;
+  margin-left: 0.5em;
   padding: 1.2em 2.5em;
 `
 

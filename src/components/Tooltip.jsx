@@ -44,7 +44,8 @@ const HorizontalLine = styled.hr`
 `;
 
 const Trigger = styled.span`
-  &:hover + ${TextContainer} {
+  color: #9382FC;
+&:hover + ${TextContainer} {
     visibility: visible;
     opacity: 1;
   }
