@@ -15,7 +15,7 @@ const TextContainer = styled.div`
   position: absolute;
   z-index: 1;
   bottom: 125%;
-  margin-left: -8em;
+  margin-left: -6em;
   opacity: 0;
   transition: opacity 0.3s;
   font-size: 12px;
@@ -27,9 +27,9 @@ const TextContainer = styled.div`
     top: 100%;
     left: 50%;
     margin-left: -5px;
-    border-width: 5px;
+    border-width: 0.7em;
     border-style: solid;
-    border-color: #333 transparent transparent transparent;
+    border-color: #DED9FF transparent transparent transparent;
   }
 `;
 
