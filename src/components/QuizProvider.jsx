@@ -6,6 +6,16 @@ export default function useQuiz() {
     return useContext(Context)
 }
 
+function mostFrequent(array) {
+    var map = array.map(function(a) {
+        return array.filter(function(b) {
+            return a === b;
+        }).length;
+    });
+
+    return array[map.indexOf(Math.max.apply(null, map))];
+}
+
 export function QuizProvider({ children }) {
   const [chosen, setChosen] = useState([])
 
@@ -23,8 +33,12 @@ export function QuizProvider({ children }) {
     setChosen(newChosen)
   }
 
+  const getPersonality = () => {
+    return mostFrequent(chosen)
+  }
+
   return (
-    <Context.Provider value={{addChoice, removeChoice}}>
+    <Context.Provider value={{addChoice, removeChoice, getPersonality}}>
         {children}
     </Context.Provider>
   );

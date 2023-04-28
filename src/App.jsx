@@ -1,10 +1,12 @@
 import { useEffect, useState } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
+import { Analytics } from '@vercel/analytics/react'
 import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
 
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
+import grain from './assets/grain.png'
 import {QuizProvider} from './components/QuizProvider'
 import BackButton from './components/BackButton'
 import Button from './components/Button'
@@ -28,6 +30,16 @@ const Foreground = styled(m.img)`
   z-index: 1;
 `
 
+const Grain = styled.div`
+  height: 100vh;
+  width: 100vw;
+  position: absolute;
+  background: url(${grain});
+  background-size: 100px;
+  mix-blend-mode: overlay;
+  z-index: 2;
+`
+
 const StyledCenter = styled.div`
   text-align: center;
   display: flex;
@@ -40,7 +52,7 @@ const StyledCenter = styled.div`
 const Centered = styled.div`
   width: 1000px;
   margin: 7em;
-  z-index: 1;
+  z-index: 10;
 `
 
 const BetaIconWrapper = styled.div`
@@ -113,10 +125,7 @@ function App() {
       setBg('#160F66')
     }
     if (page > 10) {
-      setBg('#090B5C')
-    }
-    if (page > 11) {
-      setBg('#39375D')
+      setBg('#0B0C3F')
     }
     if (page > 12) {
       setBg('#160F66')
@@ -126,6 +135,7 @@ function App() {
   return (
     <QuizProvider>
       <Center bg={bg}>
+        <Grain />
         <AnimatePresence mode="wait">
           {((page > 2 && page < 11) || (page > 12)) && <Background
             key="background"
@@ -149,6 +159,7 @@ function App() {
       </Center>
       <BackButton page={page} prevPage={prevPage} />
       <Beta />
+      <Analytics/>
     </QuizProvider>
   )
 }

@@ -6,6 +6,7 @@ import { AnimatePresence, motion as m } from 'framer-motion'
 import Button from './Button'
 import useQuiz from './QuizProvider'
 import Tooltip from './Tooltip'
+import Preload1, {Preload2} from './Preload'
 import q1_asteroids from '../assets/q1_asteroids_selected.svg'
 import q1_energy from '../assets/q1_energy_selected.svg'
 import q1_rarerock from '../assets/q1_rarerock_selected.svg'
@@ -91,6 +92,11 @@ const Text = styled.div`
   font-size: 18px;
 `
 
+const Columns = styled.div`
+  display: flex;
+  align-items: center;
+`
+
 const H4 = styled.h4`
   color: ${p=>p.theme.textSecondary};
   text-transform: uppercase;
@@ -128,7 +134,7 @@ const AnimationContent = ({ children, myKey, delay }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.3, delay: delay ? 0.2 : 0 }}
+            transition={{ duration: 0.6, delay: delay ? 0.2 : 0 }}
         >
             {children}
         </m.div>
@@ -205,7 +211,8 @@ Question.propTypes = {
 }
 
 const Pages = ({ page, nextPage }) => {  
-    const [name, setName] = useState('')
+  const [name, setName] = useState('')
+  const { getPersonality } = useQuiz()
 
     const pages = () => {
         switch(page) {
@@ -270,6 +277,7 @@ const Pages = ({ page, nextPage }) => {
                   <h2>Welcome {name}! You are embarking on an expedition to discover life in space. Along this journey you make several key decisions, so choose carefully.</h2>
                   <br/>
                   <Cta onClick={() => nextPage()}>Next</Cta>
+                  <Preload1/>
                 </VertCenter>
               </AnimationContent>
             case 3:
@@ -361,6 +369,7 @@ const Pages = ({ page, nextPage }) => {
                     <Image src={q5_shroom} />
                     <Image src={q5_serum} />
                   </Question>
+                  <Preload2/>
               </AnimationContent>
             case 8:
               return <AnimationContent myKey="8">
@@ -418,59 +427,66 @@ const Pages = ({ page, nextPage }) => {
               </AnimationContent>
             case 11:
                 return <AnimationContent myKey="11">
-                    <br/>
-                    <br/>
-                    <h1>Congrats {name}! You completed the adventure.</h1>
+                  <br/>
+                  <br/>
+                  <Columns>
                     <Text>
-                        <p>
-                            You prepared for your journey to space and saved the crew from an
-                            anomaly, becoming a hero in the process.
-                        </p> 
-                        <p>
-                            The world of web3 is vast and ever-expanding, just like space. We know
-                            that figuring out what web3 is and learning key concepts is difficult. 
-                        </p>
-                        <p>
-                            Through your completion of this personality test, we will help guide you. 
-                            Using your answers, we’re able to show you one of six potential web3 
-                            “personalities” or niches that suits your interests and passions.
-                        </p>
-                        <p>
-                            This quiz is just the start!
-                        </p>
+                      <h1>Congrats {name}! You completed the adventure.</h1>
+                      <p>
+                        You prepared for your journey to space and saved the crew from an
+                        anomaly, becoming a hero in the process.
+                      </p> 
+                      <p>
+                        The world of web3 is vast and ever-expanding, just like space. We know
+                        that figuring out what web3 is and learning key concepts is difficult. 
+                      </p>
+                      <p>
+                        Through your completion of this personality test, we will help guide you. 
+                        Using your answers, we’re able to show you one of six potential web3 
+                        “personalities” or niches that suits your interests and passions.
+                      </p>
+                      <p>
+                        This quiz is just the start!
+                      </p>
                     </Text>
-                    <img src={q2_gem} style={{ position: 'absolute', top: '18vh', right: '20em', height: '450px'}}/>
+                    <img src={q2_gem} style={{height: '420px'}}/>
+                  </Columns>
+                  <br/>
+                  <m.div
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ delay: 1, duration: 1 }}
+                  >
+                    <h3>Are you ready to find out your results?</h3>
                     <br/>
-                    <br/>
-                    <m.div
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 1, x: 0 }}
-                        transition={{ delay: 1, duration: 1 }}
-                    >
-                        <h2>Are you ready to find out your results?</h2>
-                        <br/>
-                        <Button onClick={() => nextPage()}>Heck yea!</Button>
-                    </m.div>
+                    <Button onClick={() => nextPage()}>Heck yea!</Button>
+                  </m.div>
                 </AnimationContent>
             case 12: 
                 return <AnimationContent myKey="12">
-                    <m.img
-                        src={content}
-                        initial={{ opacity: 0, x: -100 }}
-                        animate={{ opacity: 0.6, x: 0 }}
-                        transition={{ duration: 0.5 }}
-                        width="1200px"
-                    />
-                    <div style={{position: 'absolute', top: '100px', left: '100px', width: '100vw', height: '100vh', display: 'flex', justifyContent: 'center', alignItems: 'center' }}>
-                    <m.img
-                        style={{ position: 'absolute', cursor: 'pointer' }}
-                        src={modal}
-                        initial={{ opacity: 0, x: -200, y: -100 }}
-                        animate={{ opacity: 1, x: -100, y: -100 }}
-                        transition={{ delay: 1, duration: 1 }}
-                        onClick={() => nextPage()}
-                    />
-                    </div>
+                  <m.h3
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.5 }}
+                  >
+                    You could be...
+                  </m.h3>
+                  <m.h1
+                    style={{ textTransform: 'capitalize' }}
+                    initial={{ opacity: 0, x: -100 }}
+                    animate={{ opacity: 1, x: 0 }}
+                    transition={{ duration: 0.7, delay: 1 }}
+                  >
+                    The {getPersonality()}
+                  </m.h1>
+                  <m.img
+                      style={{ cursor: 'pointer' }}
+                      src={modal}
+                      initial={{ opacity: 0, x: -120 }}
+                      animate={{ opacity: 1, x: -20 }}
+                      transition={{ delay: 2, duration: 0.7 }}
+                      onClick={() => nextPage()}
+                  />
                 </AnimationContent>
             case 13: 
                 return <AnimationContent myKey="13">
