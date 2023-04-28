@@ -1,10 +1,5 @@
 import styled from 'styled-components';
 
-const TooltipContainer = styled.div`
-  position: relative;
-  display: inline-block;
-`;
-
 const TextContainer = styled.div`
   visibility: hidden;
   background-color: #DED9FF;
@@ -33,6 +28,15 @@ const TextContainer = styled.div`
   }
 `;
 
+const TooltipContainer = styled.div`
+  position: relative;
+  display: inline-block;
+  &:hover ${TextContainer} {
+    visibility: visible;
+    opacity: 1;
+  }
+`;
+
 const GmText = styled.span`
   font-size: 14px;
   color: #5A46D3;
@@ -48,11 +52,8 @@ const HorizontalLine = styled.hr`
 `;
 
 const Trigger = styled.span`
+  transition: color 0.5s;
   color: #9382FC;
-&:hover + ${TextContainer} {
-    visibility: visible;
-    opacity: 1;
-  }
   &:hover {
     color: ${p => p.theme.lightHover};
   }
