@@ -28,15 +28,6 @@ const Foreground = styled(m.img)`
   min-width: 100vw;
   position: absolute;
   bottom: 0;
-  z-index: 1;
-`
-
-const Stars2 = styled(m.div)`
-  height: 100vh;
-  width: 100vw;
-  position: absolute;
-  background: url(${stars});
-  background-size: 100vh;
   z-index: 0;
 `
 
@@ -47,7 +38,7 @@ const Grain = styled.div`
   background: url(${grain});
   background-size: 100px;
   mix-blend-mode: overlay;
-  z-index: 2;
+  z-index: 1;
 `
 
 const StyledCenter = styled.div`
@@ -83,6 +74,7 @@ const BetaIconWrapper = styled.div`
   right: 1em;
   margin-top: 0.5em;
   margin-right: 0.5em;
+  z-index: 10;
 `;
 
 const BetaText = styled.span`
