@@ -110,29 +110,8 @@ Center.propTypes = {
 function App() {
   const [page, setPage] = useState(0)
   const [bg, setBg] = useState('#131415')
-  const [point, setPoint] = useState({ x: 0, y: 0 });
-  const { x, y } = point;
-  const ref = useRef();
   
   const showBg = () => ((page > 2 && page < 11) || (page > 12))
-
-  useEffect(() => {
-    if (!ref.current) return;
-
-    const handlePointerMove = ({ clientX, clientY }) => {
-      const element = ref.current;
-      const parallaxFactor = 55;
-      const x = (clientX - element.offsetLeft - element.offsetWidth / 2) / parallaxFactor;
-      const y = (clientY - element.offsetTop - element.offsetHeight / 2) / parallaxFactor;
-      setPoint({ x, y});
-    };
-
-    window.addEventListener("mousemove", handlePointerMove);
-
-    return () => {
-      window.removeEventListener("mousemove", handlePointerMove);
-    };
-  }, [showBg()]);
 
   const prevPage = () => {
     setPage(page - 1)
@@ -144,7 +123,7 @@ function App() {
 
   useEffect(() => {
     if (page < 3) {
-      setBg('#131415')
+      setBg('#18191C')
     }
     if (page === 3) {
       setBg('#160F66')
@@ -161,11 +140,7 @@ function App() {
     <QuizProvider>
       <Center bg={bg}>
         <Grain />
-        <Stars
-          style={{
-            transform: `translate(${x}px, ${y}px)`,
-          }}
-         />
+        <Stars />
         <AnimatePresence mode="wait">
           {showBg() && <Background
             key="background"
