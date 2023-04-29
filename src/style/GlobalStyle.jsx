@@ -45,6 +45,11 @@ a {
     text-decoration: underline rgba(187, 237, 85, 1);
   }
 }
+
+@keyframes animStar {
+  from { transform: translateY(0px) }
+  to { transform: translateY(-2000px) }
+}
 `
 
 export default GlobalStyles;

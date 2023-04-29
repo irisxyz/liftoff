@@ -13,6 +13,7 @@ import BackButton from './components/BackButton'
 import Button from './components/Button'
 import Pages from './components/Pages'
 import useQuiz from './components/QuizProvider'
+import Stars from './components/Stars'
 
 const Background = styled(m.div)`
   height: 100vh;
@@ -31,12 +32,12 @@ const Foreground = styled(m.img)`
   z-index: 1;
 `
 
-const Stars = styled(m.div)`
+const Stars2 = styled(m.div)`
   height: 100vh;
   width: 100vw;
   position: absolute;
   background: url(${stars});
-  background-size: 80vh;
+  background-size: 100vh;
   z-index: 0;
 `
 
@@ -129,7 +130,7 @@ function App() {
 
     const handlePointerMove = ({ clientX, clientY }) => {
       const element = ref.current;
-      const parallaxFactor = 35;
+      const parallaxFactor = 55;
       const x = (clientX - element.offsetLeft - element.offsetWidth / 2) / parallaxFactor;
       const y = (clientY - element.offsetTop - element.offsetHeight / 2) / parallaxFactor;
       setPoint({ x, y});
@@ -169,14 +170,13 @@ function App() {
     <QuizProvider>
       <Center bg={bg}>
         <Grain />
+        <Stars
+          id="starss"
+          style={{
+            transform: `translate(${x}px, ${y}px)`,
+          }}
+         />
         <AnimatePresence mode="wait">
-          {showBg() && <Stars
-            src={stars}
-            ref={ref}
-            style={{
-              transform: `translate(${x}px, ${y}px)`,
-            }}
-           />}
           {showBg() && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}

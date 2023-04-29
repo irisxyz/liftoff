@@ -1,47 +1,24 @@
-<svg width="1377" height="668" viewBox="0 0 1377 668" fill="none" xmlns="http://www.w3.org/2000/svg">
-<circle cx="1064.59" cy="57.7368" r="2" fill="white"/>
-<circle cx="335" cy="456.58" r="2" fill="white"/>
-<circle cx="1008.51" cy="431.58" r="2" fill="white"/>
-<circle cx="1239" cy="213" r="2" fill="white"/>
-<circle cx="1374.59" cy="457.58" r="2" fill="white"/>
-<circle cx="2.7396" cy="202.48" r="2" transform="rotate(-59.3975 2.7396 202.48)" fill="white"/>
-<circle cx="223.533" cy="135.9" r="2" transform="rotate(-59.3975 223.533 135.9)" fill="white"/>
-<circle cx="444.326" cy="69.3197" r="2" transform="rotate(-59.3975 444.326 69.3197)" fill="white"/>
-<circle cx="665.119" cy="2.73959" r="2" transform="rotate(-59.3975 665.119 2.73959)" fill="white"/>
-<circle cx="876.661" cy="372.48" r="2" transform="rotate(-59.3975 876.661 372.48)" fill="white"/>
-<circle cx="44.4427" cy="455.811" r="4.12452" transform="rotate(-59.3975 44.4427 455.811)" fill="white"/>
-<circle cx="265.236" cy="389.231" r="4.12452" transform="rotate(-59.3975 265.236 389.231)" fill="white"/>
-<circle cx="486.029" cy="322.651" r="4.12452" transform="rotate(-59.3975 486.029 322.651)" fill="white"/>
-<circle cx="706.822" cy="256.071" r="4.12452" transform="rotate(-59.3975 706.822 256.071)" fill="white"/>
-<circle cx="465.65" cy="584.231" r="4.12452" transform="rotate(-59.3975 465.65 584.231)" fill="white"/>
-<circle cx="1056.59" cy="101.737" r="2" fill="white"/>
-<circle cx="327" cy="500.58" r="2" fill="white"/>
-<circle cx="547.793" cy="434" r="2" fill="white"/>
-<circle cx="1231" cy="257" r="2" fill="white"/>
-<circle cx="1366.59" cy="501.58" r="2" fill="white"/>
-<circle cx="36.5365" cy="231.765" r="2" transform="rotate(-59.3975 36.5365 231.765)" fill="white"/>
-<circle cx="257.333" cy="165.185" r="2" transform="rotate(-59.3975 257.333 165.185)" fill="white"/>
-<circle cx="478.122" cy="98.6048" r="2" transform="rotate(-59.3975 478.122 98.6048)" fill="white"/>
-<circle cx="698.919" cy="32.0247" r="2" transform="rotate(-59.3975 698.919 32.0247)" fill="white"/>
-<circle cx="910.458" cy="401.765" r="2" transform="rotate(-59.3975 910.458 401.765)" fill="white"/>
-<circle cx="114.142" cy="516.203" r="4.12452" transform="rotate(-59.3975 114.142 516.203)" fill="white"/>
-<circle cx="99.5248" cy="68.6498" r="4.12452" transform="rotate(-59.3975 99.5248 68.6498)" fill="white"/>
-<circle cx="555.728" cy="383.043" r="4.12452" transform="rotate(-59.3975 555.728 383.043)" fill="white"/>
-<circle cx="809.65" cy="455.043" r="4.12452" transform="rotate(-59.3975 809.65 455.043)" fill="white"/>
-<circle cx="535.353" cy="644.623" r="4.12452" transform="rotate(-59.3975 535.353 644.623)" fill="white"/>
-<circle cx="1037.59" cy="80.7368" r="4" fill="white"/>
-<circle cx="308" cy="479.58" r="4" fill="white"/>
-<circle cx="981.508" cy="454.58" r="4" fill="white"/>
-<circle cx="1212" cy="236" r="4" fill="white"/>
-<circle cx="1347.59" cy="480.58" r="4" fill="white"/>
-<circle cx="8.7917" cy="237.428" r="4" transform="rotate(-59.3975 8.7917 237.428)" fill="white"/>
-<circle cx="229.581" cy="170.848" r="4" transform="rotate(-59.3975 229.581 170.848)" fill="white"/>
-<circle cx="450.378" cy="104.268" r="4" transform="rotate(-59.3975 450.378 104.268)" fill="white"/>
-<circle cx="671.167" cy="37.6877" r="4" transform="rotate(-59.3975 671.167 37.6877)" fill="white"/>
-<circle cx="882.71" cy="407.428" r="4" transform="rotate(-59.3975 882.71 407.428)" fill="white"/>
-<circle cx="56.9206" cy="527.882" r="8.24903" transform="rotate(-59.3975 56.9206 527.882)" fill="white"/>
-<circle cx="42.2995" cy="80.3283" r="8.24903" transform="rotate(-59.3975 42.2995 80.3283)" fill="white"/>
-<circle cx="1029.3" cy="26.299" r="8.24903" transform="rotate(-59.3975 1029.3 26.299)" fill="white"/>
-<circle cx="719.299" cy="328.142" r="8.24903" transform="rotate(-59.3975 719.299 328.142)" fill="white"/>
-<circle cx="478.128" cy="656.302" r="8.24903" transform="rotate(-59.3975 478.128 656.302)" fill="white"/>
+<svg width="1203" height="693" viewBox="0 0 1203 693" fill="none" xmlns="http://www.w3.org/2000/svg">
+<circle cx="1026.59" cy="57.7368" r="2" fill="white"/>
+<circle cx="970.508" cy="431.58" r="2" fill="white"/>
+<circle cx="1201" cy="213" r="2" fill="white"/>
+<circle cx="627.119" cy="2.73959" r="2" transform="rotate(-59.3975 627.119 2.73959)" fill="white"/>
+<circle cx="3.53257" cy="456.558" r="2" transform="rotate(-59.3975 3.53257 456.558)" fill="white"/>
+<circle cx="224.326" cy="389.978" r="2" transform="rotate(-59.3975 224.326 389.978)" fill="white"/>
+<circle cx="665.911" cy="256.818" r="2" transform="rotate(-59.3975 665.911 256.818)" fill="white"/>
+<circle cx="424.74" cy="584.978" r="2" transform="rotate(-59.3975 424.74 584.978)" fill="white"/>
+<circle cx="509.793" cy="434" r="2" fill="white"/>
+<circle cx="1193" cy="257" r="2" fill="white"/>
+<circle cx="925" cy="625" r="2" fill="white"/>
+<circle cx="660.919" cy="32.0247" r="2" transform="rotate(-59.3975 660.919 32.0247)" fill="white"/>
+<circle cx="872.458" cy="401.765" r="2" transform="rotate(-59.3975 872.458 401.765)" fill="white"/>
+<circle cx="58.6146" cy="69.3968" r="2" transform="rotate(-59.3975 58.6146 69.3968)" fill="white"/>
+<circle cx="514.818" cy="383.79" r="2" transform="rotate(-59.3975 514.818 383.79)" fill="white"/>
+<circle cx="768.74" cy="455.79" r="2" transform="rotate(-59.3975 768.74 455.79)" fill="white"/>
+<path d="M527.156 688.126C528.107 688.688 528.422 689.914 527.859 690.865C527.297 691.816 526.071 692.131 525.12 691.568C524.169 691.006 523.854 689.78 524.417 688.829C524.979 687.878 526.205 687.563 527.156 688.126Z" fill="white"/>
+<circle cx="1172" cy="234" r="2" fill="white"/>
+<circle cx="1080" cy="578" r="2" fill="white"/>
+<circle cx="409.638" cy="104.971" r="2" transform="rotate(-59.3975 409.638 104.971)" fill="white"/>
+<circle cx="10.3607" cy="530.079" r="2" transform="rotate(-59.3975 10.3607 530.079)" fill="white"/>
+<circle cx="282.74" cy="10.4969" r="2" transform="rotate(-59.3975 282.74 10.4969)" fill="white"/>
 </svg>
