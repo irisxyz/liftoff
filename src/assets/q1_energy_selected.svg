@@ -1,34 +1,34 @@
 <svg width="500" height="500" viewBox="0 0 500 500" fill="none" xmlns="http://www.w3.org/2000/svg">
 <g id="q1_energy_selected">
 <g id="Group 100">
-<path id="Vector 3373" d="M255.5 442.5L185.5 241C193 248.333 216.1 264 248.5 268C280.9 272 310.667 251.667 321.5 241C332 229.833 353.5 200.4 355.5 172C357.5 143.6 349.333 115.333 342 105L488 268L255.5 442.5Z" fill="url(#paint0_linear_281_3918)"/>
+<path id="Vector 3373" d="M255.5 442.5L185.5 241C193 248.333 216.1 264 248.5 268C280.9 272 310.667 251.667 321.5 241C332 229.833 353.5 200.4 355.5 172C357.5 143.6 349.333 115.333 342 105L488 268L255.5 442.5Z" fill="url(#paint0_linear_371_277)"/>
 <g id="Group 99">
 <rect id="Rectangle 461" x="177.125" y="229.42" width="13.4478" height="31.218" transform="rotate(43.0243 177.125 229.42)" fill="#C1B8FA"/>
 <path id="Subtract" fill-rule="evenodd" clip-rule="evenodd" d="M251.879 273.125C311.56 273.125 359.941 224.744 359.941 165.062C359.941 105.381 311.56 57 251.879 57C192.198 57 143.816 105.381 143.816 165.062C143.816 224.744 192.198 273.125 251.879 273.125ZM252.119 261.598C305.302 261.598 348.415 218.485 348.415 165.303C348.415 112.12 305.302 69.0069 252.119 69.0069C198.936 69.0069 155.823 112.12 155.823 165.303C155.823 218.485 198.936 261.598 252.119 261.598Z" fill="#C1B8FA"/>
 <g id="Mask group">
-<mask id="mask0_281_3918" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="42" y="233" width="141" height="141">
+<mask id="mask0_371_277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="42" y="233" width="141" height="141">
 <rect id="Rectangle 459" x="42" y="341.398" width="152.248" height="46.1067" transform="rotate(-44.9999 42 341.398)" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask0_281_3918)">
+<g mask="url(#mask0_371_277)">
 <rect id="Rectangle 460" x="42" y="341.398" width="152.248" height="46.1067" transform="rotate(-44.9999 42 341.398)" fill="#5745CC"/>
 <path id="Vector 3370" d="M106.117 398.718L61.6914 354.292L167.593 249.591L191.607 279.128L106.117 398.718Z" fill="#2F2574"/>
 <path id="Vector 3368" d="M188.121 288.974L133.254 235.087L144.524 226.058L197.611 278.779L188.121 288.974Z" fill="#C1B8FA"/>
 <path id="Vector 3369" d="M81.8552 382.239L31.344 333.373L43.1185 326.9L91.9509 374.66L81.8552 382.239Z" fill="#C1B8FA"/>
 </g>
 </g>
-<circle id="Ellipse 149" cx="251.881" cy="165.063" r="92.2133" stroke="#29198F" stroke-width="3.84222"/>
-<path id="Vector 3371" d="M219.938 100.465C199.766 94.3175 184.317 124.159 179.114 139.848C173.834 173.707 201.927 154.736 201.927 145.371C201.927 137.879 208.491 130.242 211.773 127.361C222.899 120.957 240.109 106.613 219.938 100.465Z" fill="#C1B8FA" fill-opacity="0.29"/>
+<circle id="Ellipse 149" cx="251.881" cy="165.062" r="92.2133" stroke="#29198F" stroke-width="3.84222"/>
+<path id="Vector 3371" d="M219.938 100.465C199.766 94.3176 184.317 124.159 179.114 139.848C173.834 173.707 201.927 154.737 201.927 145.371C201.927 137.879 208.491 130.242 211.773 127.361C222.899 120.957 240.109 106.613 219.938 100.465Z" fill="#C1B8FA" fill-opacity="0.29"/>
 <path id="Vector 3372" d="M290.169 217.002C300.275 220.076 308.015 205.152 310.622 197.306C313.267 180.373 299.192 189.861 299.192 194.544C299.192 198.291 295.904 202.11 294.259 203.551C288.685 206.754 280.062 213.927 290.169 217.002Z" fill="#C1B8FA" fill-opacity="0.29"/>
 </g>
 </g>
 <g id="Group 106">
 <path id="Vector 3398" d="M333.102 454.525V280.175H430.452V456.175C419.452 466.735 397.452 467.725 382.602 467.725C367.752 467.725 340.618 460.208 333.102 454.525Z" fill="#3D31B4"/>
 <g id="Mask group_2">
-<mask id="mask1_281_3918" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="333" y="280" width="98" height="188">
+<mask id="mask1_371_277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="333" y="280" width="98" height="188">
 <path id="Vector 3399" d="M333.098 454.525V280.175H430.448V456.175C419.448 466.735 397.448 467.725 382.598 467.725C367.748 467.725 340.614 460.208 333.098 454.525Z" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask1_281_3918)">
-<path id="Vector 3401" d="M433.199 339.575C383.919 354.095 345.199 345.625 331.999 339.575L325.949 465.525C354.549 476.965 405.149 480.925 433.199 468.275V339.575Z" fill="#882F0F"/>
+<g mask="url(#mask1_371_277)">
+<path id="Vector 3401" d="M433.199 339.575C383.919 354.095 345.199 345.625 331.999 339.575L325.949 465.525C354.549 476.965 405.149 480.925 433.199 468.275V339.575Z" fill="#5CFDE1"/>
 <path id="Vector 3400" d="M433.196 348.375C383.916 362.895 345.196 354.425 331.996 348.375L329.246 367.075C357.846 378.515 405.146 379.725 433.196 367.075V348.375Z" fill="white"/>
 <rect id="Rectangle 462" x="383.148" y="281.275" width="34.1" height="198" fill="#242121" fill-opacity="0.26"/>
 <rect id="Rectangle 463" x="335.848" y="281.275" width="7.7" height="198" fill="#242121" fill-opacity="0.26"/>
@@ -38,20 +38,20 @@
 <ellipse id="Ellipse 152" cx="382.051" cy="280.175" rx="38.5" ry="11" fill="#4E40DE"/>
 <path id="Vector 3397" d="M351.25 281.275V275.775H411.75C411.933 277.425 412.19 280.835 411.75 281.275C408.45 284.575 394.15 286.775 381.5 286.775C366.953 286.775 355.283 283.475 351.25 281.275Z" fill="#3D31B4"/>
 <g id="Mask group_3">
-<mask id="mask2_281_3918" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="351" y="275" width="61" height="12">
+<mask id="mask2_371_277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="351" y="275" width="61" height="12">
 <path id="Vector 3403" d="M351.25 281.275V275.775H411.75C411.933 277.425 412.19 280.835 411.75 281.275C408.45 284.575 394.15 286.775 381.5 286.775C366.953 286.775 355.283 283.475 351.25 281.275Z" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask2_281_3918)">
+<g mask="url(#mask2_371_277)">
 <rect id="Rectangle 464" x="391.949" y="272.475" width="15.4" height="16.5" fill="#252020" fill-opacity="0.21"/>
 </g>
 </g>
 <ellipse id="Ellipse 150" cx="381.5" cy="275.775" rx="30.25" ry="6.6" fill="#CEC8FE"/>
 <path id="Vector 3396" d="M369.949 275.775V266.975H394.149V275.775C383.149 280.175 373.433 277.608 369.949 275.775Z" fill="#3D31B4"/>
 <g id="Mask group_4">
-<mask id="mask3_281_3918" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="369" y="266" width="26" height="13">
+<mask id="mask3_371_277" style="mask-type:alpha" maskUnits="userSpaceOnUse" x="369" y="266" width="26" height="13">
 <path id="Vector 3403_2" d="M369.953 275.775V266.975H394.153V275.775C383.153 280.175 373.436 277.608 369.953 275.775Z" fill="#D9D9D9"/>
 </mask>
-<g mask="url(#mask3_281_3918)">
+<g mask="url(#mask3_371_277)">
 <rect id="Rectangle 464_2" x="384.254" y="262.575" width="5.5" height="16.5" fill="#252020" fill-opacity="0.21"/>
 </g>
 </g>
@@ -60,7 +60,7 @@
 </g>
 </g>
 <defs>
-<linearGradient id="paint0_linear_281_3918" x1="284.5" y1="111.5" x2="400" y2="318.5" gradientUnits="userSpaceOnUse">
+<linearGradient id="paint0_linear_371_277" x1="284.5" y1="111.5" x2="400" y2="318.5" gradientUnits="userSpaceOnUse">
 <stop stop-color="#C1B8FA" stop-opacity="0.35"/>
 <stop offset="1" stop-color="#C1B8FA" stop-opacity="0"/>
 </linearGradient>
