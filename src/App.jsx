@@ -4,7 +4,6 @@ import styled from 'styled-components'
 import { Analytics } from '@vercel/analytics/react'
 import { motion as m, useAnimate, useAnimation, AnimatePresence } from 'framer-motion'
 
-import stars from './assets/stars.svg'
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
 import grain from './assets/grain.png'
@@ -171,7 +170,6 @@ function App() {
       <Center bg={bg}>
         <Grain />
         <Stars
-          id="starss"
           style={{
             transform: `translate(${x}px, ${y}px)`,
           }}
