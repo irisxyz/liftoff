@@ -63,7 +63,7 @@ const Stars = () => {
     <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 50}px, ${y / 50}px)` }}>
       <Span ref={ref} stars={stars1} size={1.5} timing={120} />
     </m.div>
-    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 85}px, ${y / 85}px)` }}>
+    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 70}px, ${y / 70}px)` }}>
       <Span stars={stars2} size={2.4} timing={190} />
     </m.div>
     <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 120}px, ${y / 120}px)` }}>
