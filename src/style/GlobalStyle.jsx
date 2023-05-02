@@ -14,6 +14,7 @@ body {
   height: 100%;
   font-size: 14px;
   background: ${p => p.theme.bg};
+  background: radial-gradient(79.35% 79.35% at 50% 100%, rgba(133, 58, 255, 0.2) 0%, rgba(0, 0, 0, 0) 100%), #18191C;
   padding: 0;
   margin: 0;
   color: white;

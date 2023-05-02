@@ -109,8 +109,7 @@ Center.propTypes = {
 
 function App() {
   const [page, setPage] = useState(0)
-  const [bg, setBg] = useState('#131415')
-  
+  const [bg, setBg] = useState('')
   const showBg = () => ((page > 2 && page < 11) || (page > 12))
 
   const prevPage = () => {
@@ -123,10 +122,10 @@ function App() {
 
   useEffect(() => {
     if (page < 3) {
-      setBg('#18191C')
+      setBg('rgba(22, 15, 102, 0)')
     }
     if (page === 3) {
-      setBg('#160F66')
+      setBg('rgba(22, 15, 102, 1)')
     }
     if (page > 10) {
       setBg('#0B0C3F')
