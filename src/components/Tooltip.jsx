@@ -2,29 +2,30 @@ import styled from 'styled-components';
 
 const TextContainer = styled.div`
   visibility: hidden;
-  background-color: #DED9FF;
-  color: #000000;
+  background: rgba(64, 34, 150, 0.3);
+  color: ${p=>p.theme.textSecondary};
   text-align: left;
-  padding: 0.5em;
-  border-radius: 3px;
+  padding: 1.5em;
+  border-radius: 8px;
   position: absolute;
   z-index: 1;
-  bottom: 125%;
-  margin-left: -6em;
+  bottom: 110%;
+  left: -8.5em;
   opacity: 0;
-  transition: opacity 0.3s;
-  font-size: 12px;
-  width: 17em;
+  transition: all 400ms;
+  font-size: 14px;
+  width: 19em;
+  backdrop-filter: blur(3px);
 
   &::after {
     content: '';
     position: absolute;
     top: 100%;
     left: 50%;
-    margin-left: -5px;
-    border-width: 0.7em;
+    margin-left: -1em;
+    border-width: 1em;
     border-style: solid;
-    border-color: #DED9FF transparent transparent transparent;
+    border-color: rgba(64, 34, 150, 0.4) transparent transparent transparent;
   }
 `;
 
@@ -37,9 +38,10 @@ const TooltipContainer = styled.div`
   }
 `;
 
-const GmText = styled.span`
-  font-size: 14px;
-  color: #5A46D3;
+const GmText = styled.h2`
+  font-size: 24px;
+  font-weight: normal;
+  color: #fff;
 `
 
 const DefText = styled.div`
@@ -48,7 +50,7 @@ const DefText = styled.div`
 
 const HorizontalLine = styled.hr`
   border: 0;
-  border-top: 1.5px solid #5A46D3;
+  border-top: 1.5px solid #6C64C5;
 `;
 
 const Trigger = styled.span`
@@ -64,7 +66,7 @@ const Tooltip = () => {
     <TooltipContainer>
       <Trigger>gm!</Trigger>
       <TextContainer>
-        <GmText>g•m <span style={{color: '#867FB1'}}>| giːɛm (GEE-em) |</span></GmText>
+        <GmText>g•m <span style={{color: '#6C64C5'}}>| giːɛm (GEE-em)</span></GmText>
         <HorizontalLine />
         <DefText>
             1. an abbreviation commonly used as shorthand for "good morning."
