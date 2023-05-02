@@ -13,7 +13,7 @@ html,
 body {
   height: 100%;
   font-size: 14px;
-  background: #101113;
+  background: ${p => p.theme.bg};
   padding: 0;
   margin: 0;
   color: white;

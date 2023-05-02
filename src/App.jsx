@@ -139,7 +139,7 @@ function App() {
   return (
     <QuizProvider>
       <Center bg={bg}>
-        <Grain />
+        {showBg() && <Grain />}
         <Stars />
         <AnimatePresence mode="wait">
           {showBg() && <Background
