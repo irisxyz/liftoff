@@ -124,7 +124,7 @@ function App() {
     if (page < 3) {
       setBg('rgba(22, 15, 102, 0)')
     }
-    if (page === 3) {
+    if (page >= 3 && page <= 10) {
       setBg('rgba(22, 15, 102, 1)')
     }
     if (page > 10) {
