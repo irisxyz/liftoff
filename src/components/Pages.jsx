@@ -126,6 +126,10 @@ const Modal = styled.a`
     }
 `
 
+function vowelTest(s) {
+  return (/^[aeiou]$/i).test(s);
+}
+
 const AnimationContent = ({ children, myKey, delay }) => {
     return (
         <m.div
@@ -498,14 +502,19 @@ const Pages = ({ page, nextPage }) => {
                         marginTop: '6em',
                         display: 'flex',
                         flexDirection: 'column',
-                        alignItems: 'center'
+                        alignItems: 'center',
+                        textAlign: 'center'
                         }}>
                         <img src={q2_gem} height="300px"/>
-                        <h1>{name}, you're a Trailblazer!</h1>
+                        <h1>{name}, you're a{vowelTest(getPersonality().slice(0,1)) && 'n'} <span style={{ textTransform: 'capitalize' }}>{getPersonality()}</span>!</h1>
                         <br/>
                         <P>You completed the Liftoff web3 personality quiz!</P>
                         <P>Congrats on being one of the first 🎉</P>
-                        <p>Stay tuned for more.</p>
+                        <p>
+                          What's next: We're working on adding educational content <br/>
+                          for you to explore, specifically catered to your personality.<br/>
+                          Follow us to catch all of our updates:
+                        </p>
                         <Modal href="https://twitter.com/liftoff_quest" target="_blank" rel="noopener noreferrer">
                             <img src={twitter} height="20px"/>
                             @liftoff_quest
