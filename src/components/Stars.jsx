@@ -60,13 +60,13 @@ const Stars = () => {
   }, []);
   
   return <>
-    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 50}px, ${y / 50}px)` }}>
+    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 40}px, ${y / 40}px)` }}>
       <Span ref={ref} stars={stars1} size={1.5} timing={120} />
     </m.div>
-    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 70}px, ${y / 70}px)` }}>
+    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 75}px, ${y / 75}px)` }}>
       <Span stars={stars2} size={2.4} timing={190} />
     </m.div>
-    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 120}px, ${y / 120}px)` }}>
+    <m.div style={{ position: 'absolute', top: 0, left: 0, transform: `translate(${x / 110}px, ${y / 110}px)` }}>
       <Span stars={stars3} size={3.5} timing={230} />
     </m.div>
   </>
