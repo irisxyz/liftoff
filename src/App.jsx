@@ -1,8 +1,8 @@
-import { useEffect, useState } from 'react'
+import { useEffect, useState, useRef } from 'react'
 import PropTypes from 'prop-types'
 import styled from 'styled-components'
 import { Analytics } from '@vercel/analytics/react'
-import { motion as m, useAnimate, AnimatePresence } from 'framer-motion'
+import { motion as m, useAnimate, useAnimation, AnimatePresence } from 'framer-motion'
 
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
@@ -12,6 +12,7 @@ import BackButton from './components/BackButton'
 import Button from './components/Button'
 import Pages from './components/Pages'
 import useQuiz from './components/QuizProvider'
+import Stars from './components/Stars'
 
 const Background = styled(m.div)`
   height: 100vh;
@@ -27,7 +28,7 @@ const Foreground = styled(m.img)`
   min-width: 100vw;
   position: absolute;
   bottom: 0;
-  z-index: 1;
+  z-index: 0;
 `
 
 const Grain = styled.div`
@@ -37,7 +38,7 @@ const Grain = styled.div`
   background: url(${grain});
   background-size: 100px;
   mix-blend-mode: overlay;
-  z-index: 2;
+  z-index: 1;
 `
 
 const StyledCenter = styled.div`
@@ -73,6 +74,7 @@ const BetaIconWrapper = styled.div`
   right: 1em;
   margin-top: 0.5em;
   margin-right: 0.5em;
+  z-index: 10;
 `;
 
 const BetaText = styled.span`
@@ -108,6 +110,8 @@ Center.propTypes = {
 function App() {
   const [page, setPage] = useState(0)
   const [bg, setBg] = useState('#131415')
+  
+  const showBg = () => ((page > 2 && page < 11) || (page > 12))
 
   const prevPage = () => {
     setPage(page - 1)
@@ -119,7 +123,7 @@ function App() {
 
   useEffect(() => {
     if (page < 3) {
-      setBg('#131415')
+      setBg('#18191C')
     }
     if (page === 3) {
       setBg('#160F66')
@@ -135,16 +139,17 @@ function App() {
   return (
     <QuizProvider>
       <Center bg={bg}>
-        <Grain />
+        {showBg() && <Grain />}
+        <Stars />
         <AnimatePresence mode="wait">
-          {((page > 2 && page < 11) || (page > 12)) && <Background
+          {showBg() && <Background
             key="background"
             initial={{ opacity: 0, scale: 6 }}
             animate={{ opacity: 1, scale: 1 }}
             exit={{ opacity: 0, scale: 6 }}
             transition={{ delay: 0, duration: 0.8, ease: "easeOut" }}
-          />}
-          {((page > 2 && page < 11) || (page > 12))  && <Foreground
+           />}
+          {showBg()  && <Foreground
             key="foreground"
             src={bottom}
             initial={{ opacity: 0, y: 600 }}

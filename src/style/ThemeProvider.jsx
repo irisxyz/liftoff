@@ -20,8 +20,8 @@ const theme = {
   secondary: PRIMITIVES.secondary,
   text: PRIMITIVES.primary01,
   textSecondary: PRIMITIVES.primary04,
-  bg: '#131415',
-  font: 'Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
+  bg: '#18191C',
+  font: 'Switzer, Inter, system-ui, Avenir, Helvetica, Arial, sans-serif',
 }
 
 const MyThemeProvider = ({ children }) => <ThemeProvider theme={theme}>{children}</ThemeProvider>

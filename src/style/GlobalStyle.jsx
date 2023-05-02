@@ -2,7 +2,7 @@ import { createGlobalStyle } from "styled-components";
 
 const GlobalStyles = createGlobalStyle`
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: ${p => p.theme.font};
   font-synthesis: none;
   text-rendering: optimizeLegibility;
   -webkit-font-smoothing: antialiased;
@@ -13,7 +13,7 @@ html,
 body {
   height: 100%;
   font-size: 14px;
-  background: #101113;
+  background: ${p => p.theme.bg};
   padding: 0;
   margin: 0;
   color: white;
@@ -44,6 +44,11 @@ a {
   &:hover {
     text-decoration: underline rgba(187, 237, 85, 1);
   }
+}
+
+@keyframes animStar {
+  from { transform: translateY(0px) }
+  to { transform: translateY(-2000px) }
 }
 `
 
