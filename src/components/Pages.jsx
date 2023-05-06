@@ -56,6 +56,11 @@ const Input = styled.input`
   padding: 0.5em;
   font-size: 18px;
   width: 550px;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    width: 300px;
+  }
 `
 
 const Images = styled(m.div)`
@@ -66,6 +71,12 @@ const Image = styled(m.img)`
     max-height: 300px;
     max-width: 300px;
     margin: 0 1em;
+    
+    @media only screen 
+    and (max-device-width: 480px) {
+      max-height: 140px;
+      max-width: 140px;
+    }
 `
 
 const Illustration = styled(m.img)`
@@ -77,6 +88,11 @@ const Buttons = styled.div`
   width: 1000px;
   position: absolute;
   bottom: 6em;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    bottom: 3em;
+  }
 `
 
 const QuestionButton = styled(Button)`
@@ -85,6 +101,12 @@ const QuestionButton = styled(Button)`
   text-align: left;
   margin-bottom: 0.5em;
   font-size: 20px;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    font-size: 14px;
+    width: 300px;
+  }
 `
 
 const Text = styled.div`

@@ -18,15 +18,30 @@ body {
   padding: 0;
   margin: 0;
   color: white;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    font-size: 12px;
+  }
 }
 h1, h2, h3 {
   margin: 0;
 }
 h1 {
   font-size: 48px;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    font-size: 32px;
+  }
 }
 h2 {
   font-size: 36px;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    font-size: 24px;
+  }
 }
 h3 {
   font-size: 28px;

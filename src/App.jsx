@@ -54,6 +54,12 @@ const Centered = styled.div`
   width: 1000px;
   margin: 7em;
   z-index: 10;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    margin: 2em;
+    margin-top: 6em;
+  }
 `
 
 const BetaIconWrapper = styled.div`
