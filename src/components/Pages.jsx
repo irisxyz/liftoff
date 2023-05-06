@@ -63,8 +63,14 @@ const Input = styled.input`
   }
 `
 
+const QuestionLabel = styled.p`
+  margin: 0;
+  margin-bottom: 0.4em;
+`
+
 const Images = styled(m.div)`
   margin: 2em 0;
+  text-align: center;
 `
 
 const Image = styled(m.img)`
@@ -160,7 +166,7 @@ const AnimationContent = ({ children, myKey, delay }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: delay ? 0.2 : 0 }}
+            transition={{ duration: 0.8, delay: delay ? 0.2 : 0 }}
         >
             {children}
         </m.div>
@@ -192,7 +198,7 @@ const Question = ({
     next()
   }
     return <>
-        <span>Question {index}/8</span>
+        <QuestionLabel>Question {index}/8</QuestionLabel>
         <m.h2
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}

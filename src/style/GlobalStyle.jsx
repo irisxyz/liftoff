@@ -28,20 +28,10 @@ h1, h2, h3 {
   margin: 0;
 }
 h1 {
-  font-size: 48px;
-  
-  @media only screen 
-  and (max-device-width: 480px) {
-    font-size: 32px;
-  }
+  font-size: 3.5em;
 }
 h2 {
-  font-size: 36px;
-  
-  @media only screen 
-  and (max-device-width: 480px) {
-    font-size: 24px;
-  }
+  font-size: 2.2em;
 }
 h3 {
   font-size: 28px;

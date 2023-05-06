@@ -4,6 +4,7 @@ import styled from 'styled-components'
 import { Analytics } from '@vercel/analytics/react'
 import { motion as m, useAnimate, useAnimation, AnimatePresence } from 'framer-motion'
 
+import background from './assets/background.png'
 import spaceship from './assets/spaceship.svg'
 import bottom from './assets/bottom.svg'
 import grain from './assets/grain.png'
@@ -22,6 +23,13 @@ const Background = styled(m.div)`
   z-index: 0;
   background-size: cover;
   background-position: center;
+    
+  @media only screen 
+  and (max-device-width: 480px) {
+    background: url(${background});
+    background-size: 64vh;
+    background-position: center;
+  }
 `
 
 const Foreground = styled(m.img)`
@@ -29,12 +37,18 @@ const Foreground = styled(m.img)`
   position: absolute;
   bottom: 0;
   z-index: 0;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    display: none;
+  }
 `
 
 const Grain = styled.div`
   height: 100vh;
   width: 100vw;
   position: absolute;
+  opacity: 0.4;
   background: url(${grain});
   background-size: 100px;
   mix-blend-mode: overlay;
@@ -58,7 +72,7 @@ const Centered = styled.div`
   @media only screen 
   and (max-device-width: 480px) {
     margin: 2em;
-    margin-top: 6em;
+    margin-top: 8em;
   }
 `
 
@@ -81,6 +95,17 @@ const BetaIconWrapper = styled.div`
   margin-top: 0.5em;
   margin-right: 0.5em;
   z-index: 10;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    border: 1px solid #3986FC;
+    height: 0.6em;
+    width: 1.6em;
+    font-size: 11px;
+    font-weight: normal;
+    margin-top: 0.25em;
+    margin-right: 0.25em;
+  }
 `;
 
 const BetaText = styled.span`
