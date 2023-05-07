@@ -27,7 +27,7 @@ const Background = styled(m.div)`
   @media only screen 
   and (max-device-width: 480px) {
     background: url(${background});
-    background-size: 64vh;
+    background-size: 60vh;
     background-position: center;
   }
 `
