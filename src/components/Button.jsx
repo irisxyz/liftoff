@@ -20,6 +20,10 @@ const StyledButton = style.button`
     border: 1px solid #913BE7;
     box-shadow: 0px 0px 16px #8232C0;
   }
+  @media only screen 
+  and (max-device-width: 480px) {
+    font-size: 14px;
+  }
 `
 
 export default StyledButton

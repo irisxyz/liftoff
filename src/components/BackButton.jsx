@@ -12,6 +12,11 @@ const StyledButton = styled(Button)`
   margin-top: 0.5em;
   margin-left: 0.5em;
   padding: 1.2em 2.5em;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    padding: 0.5em 1em;
+  }
 `
 
 const BackButton = ({ page, prevPage }) => {

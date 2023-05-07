@@ -56,16 +56,33 @@ const Input = styled.input`
   padding: 0.5em;
   font-size: 18px;
   width: 550px;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    width: 300px;
+  }
+`
+
+const QuestionLabel = styled.p`
+  margin: 0;
+  margin-bottom: 0.4em;
 `
 
 const Images = styled(m.div)`
   margin: 2em 0;
+  text-align: center;
 `
 
 const Image = styled(m.img)`
     max-height: 300px;
     max-width: 300px;
     margin: 0 1em;
+    
+    @media only screen 
+    and (max-device-width: 480px) {
+      max-height: 140px;
+      max-width: 140px;
+    }
 `
 
 const Illustration = styled(m.img)`
@@ -77,6 +94,11 @@ const Buttons = styled.div`
   width: 1000px;
   position: absolute;
   bottom: 6em;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    bottom: 3em;
+  }
 `
 
 const QuestionButton = styled(Button)`
@@ -85,6 +107,12 @@ const QuestionButton = styled(Button)`
   text-align: left;
   margin-bottom: 0.5em;
   font-size: 20px;
+  
+  @media only screen 
+  and (max-device-width: 480px) {
+    font-size: 14px;
+    width: 300px;
+  }
 `
 
 const Text = styled.div`
@@ -138,7 +166,7 @@ const AnimationContent = ({ children, myKey, delay }) => {
             initial={{ opacity: 0 }}
             animate={{ opacity: 1 }}
             exit={{ opacity: 0 }}
-            transition={{ duration: 0.6, delay: delay ? 0.2 : 0 }}
+            transition={{ duration: 0.8, delay: delay ? 0.2 : 0 }}
         >
             {children}
         </m.div>
@@ -170,7 +198,7 @@ const Question = ({
     next()
   }
     return <>
-        <span>Question {index}/8</span>
+        <QuestionLabel>Question {index}/8</QuestionLabel>
         <m.h2
             initial={{ x: -100, opacity: 0 }}
             animate={{ x: 0, opacity: 1 }}
